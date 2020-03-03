@@ -1,0 +1,116 @@
+package com.assimilate.matrimony.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.omg.PortableInterceptor.USER_EXCEPTION;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.assimilate.matrimony.dao.HobbiesRepository;
+import com.assimilate.matrimony.dao.InterestRepository;
+import com.assimilate.matrimony.dao.LanguageRepository;
+import com.assimilate.matrimony.dao.LifeStyleRepository;
+import com.assimilate.matrimony.dao.SportsRepository;
+import com.assimilate.matrimony.dao.UserRepository;
+import com.assimilate.matrimony.domain.HobbiesEntity;
+import com.assimilate.matrimony.domain.InterestEntity;
+import com.assimilate.matrimony.domain.LanguageEntity;
+import com.assimilate.matrimony.domain.LifeStyleEntity;
+import com.assimilate.matrimony.domain.SportsEntity;
+import com.assimilate.matrimony.domain.UserEntity;
+import com.assimilate.matrimony.service.LifeStyleService;
+
+@Service
+public class LifeStyleServiceImpl implements LifeStyleService {
+
+	@Autowired
+	private LifeStyleRepository lifeStyleRepository;
+
+	@Autowired
+	private LanguageRepository languageRepository;
+
+	@Autowired
+	private HobbiesRepository hobbiesRepository;
+
+	@Autowired
+	private InterestRepository interestRepository;
+
+	@Autowired
+	private SportsRepository sportsRepository;
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public LifeStyleEntity postLifeStyle(LifeStyleEntity lifeStyle) {
+
+		LanguageEntity languageEntity = lifeStyle.getLanguage();
+
+		Optional<LanguageEntity> languageEntity2 = languageRepository.findById(languageEntity.getLanguage_id());
+
+		if (languageEntity2 != null) {
+			HobbiesEntity hobbiesEntity = lifeStyle.getHobbies();
+			Optional<HobbiesEntity> hobbiesEntity2 = hobbiesRepository.findById(hobbiesEntity.getHobbies_id());
+			if (hobbiesEntity2 != null) {
+
+				InterestEntity interestEntity = lifeStyle.getInterest();
+				Optional<InterestEntity> interestEntity2 = interestRepository.findById(interestEntity.getInterest_id());
+
+				if (interestEntity2 != null) {
+
+					SportsEntity sportsEntity = lifeStyle.getSports();
+					Optional<SportsEntity> sportsEntity2 = sportsRepository.findById(sportsEntity.getSports_id());
+
+					if (sportsEntity2 != null) {
+
+						UserEntity userEntity = lifeStyle.getUser();
+						Optional<UserEntity> userEntity2 = userRepository.findById(userEntity.getUser_id());
+						if (userEntity2 != null) {
+
+							lifeStyleRepository.save(lifeStyle);
+						} else {
+							System.out.println();
+						}
+					} else {
+						System.out.println();
+					}
+
+				} else {
+					System.out.println("La-----------");
+				}
+			}
+
+		}
+		return lifeStyle;
+	}
+
+	@Override
+	public int updateLifeStyle(LifeStyleEntity lifeStyle) {
+		lifeStyleRepository.save(lifeStyle);
+
+		return lifeStyle.getLifestyle_id();
+
+	}
+
+	@Override
+	public int deleteLifeStyle(int lifestyle_id) {
+		lifeStyleRepository.deleteById(lifestyle_id);
+		return 1;
+	}
+
+	@Override
+	public List<LifeStyleEntity> getAll() {
+
+		List<LifeStyleEntity> lifeStyle = lifeStyleRepository.findAll();
+
+		return lifeStyle;
+	}
+
+	@Override
+	public List<HobbiesEntity> getAllHobbies() {
+		List<HobbiesEntity> list=hobbiesRepository.findAll();
+		return list;
+	}
+
+}

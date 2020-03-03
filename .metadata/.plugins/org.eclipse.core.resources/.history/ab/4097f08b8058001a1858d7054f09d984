@@ -1,0 +1,12 @@
+package com.assimilate.matrimony.common;
+
+public class MatrimonyConstants {
+
+	public final static String API= "/api/user";
+	public final static String POST_PROFILE_DETAILS="/profiledetails/create_profile_details";
+	public final static String UPDATE_PROFILE_DETAILS="/profileDetails/updateProfileDetails/{user_id}/{profile_details_id}";
+	public final static String DELETE_PROFILE_DETAILS="/profiledetails/{profile_details_id}";
+	public final static String PROFILE_DETAILS_LIST="/getAll/list";
+	public final static String DELETE_PROFILE_DETAILS_By_USER_ID="/profile_details/delete/{user_id}";
+	
+}

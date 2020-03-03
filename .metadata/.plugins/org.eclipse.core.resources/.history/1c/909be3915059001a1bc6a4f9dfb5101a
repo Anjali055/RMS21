@@ -1,0 +1,5 @@
+package com.assimilate.matrimony.service;
+
+public interface UsersService {
+
+}

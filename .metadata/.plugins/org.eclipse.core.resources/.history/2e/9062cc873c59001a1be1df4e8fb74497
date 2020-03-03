@@ -1,0 +1,58 @@
+package com.assimilate.matrimony.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="language")
+public class LanguageEntity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column()
+	private String language_name;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getLanguage_name() {
+		return language_name;
+	}
+
+	public void setLanguage_name(String language_name) {
+		this.language_name = language_name;
+	}
+
+	public LanguageEntity(Integer id, String language_name) {
+		super();
+		this.id = id;
+		this.language_name = language_name;
+	}
+
+	public LanguageEntity() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "LanguageEntity [id=" + id + ", language_name=" + language_name + "]";
+	}
+	
+
+   
+	
+
+}

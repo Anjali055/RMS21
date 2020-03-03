@@ -1,0 +1,21 @@
+package com.assimilate.matrimony.domain;
+
+public class UsersEntity {
+	
+	@Entity
+	@Table(name = "USERS")
+	public class User {
+
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int id;
+	    private String firstName;
+	    private String lastName;
+	    private String email;
+	    private String username;
+	    @JsonIgnore
+	    private String password;
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.assimilate.matrimony.dao;
+
+import com.assimilate.matrimony.domain.UsersEntity;
+import com.assimilate.matrimony.domain.UsersEntity.User;
+
+public interface UserDao extends JpaRepository {
+
+    UsersEntity findByUsername(String username);
+
+    UsersEntity findByEmail(String email);
+}

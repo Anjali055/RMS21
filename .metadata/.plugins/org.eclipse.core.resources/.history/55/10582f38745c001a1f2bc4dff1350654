@@ -1,0 +1,11 @@
+package com.assimilate.matrimony.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.assimilate.matrimony.domain.InterestEntity;
+
+public interface InterestRepository extends JpaRepository<InterestEntity, Integer> {
+	
+	
+
+}

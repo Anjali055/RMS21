@@ -1,0 +1,76 @@
+package com.assimilate.matrimony.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.assimilate.matrimony.dao.LanguageRepository;
+import com.assimilate.matrimony.dao.LifeStyleRepository;
+import com.assimilate.matrimony.domain.LanguageEntity;
+import com.assimilate.matrimony.domain.LifeStyleEntity;
+import com.assimilate.matrimony.service.LifeStyleService;
+@Service
+public class LifeStyleServiceImpl implements LifeStyleService {
+	
+	
+	@Autowired
+	private LifeStyleRepository lifeStyleRepository;
+	
+	@Autowired
+	private LanguageRepository languageRepository;
+
+	@Override
+	public int postLifeStyle(LifeStyleEntity lifeStyle) {
+		
+		LanguageEntity languageEntity = lifeStyle.getLanguage();
+		
+		Optional<LanguageEntity> languageEntity2 =languageRepository.findById(languageEntity.getId());
+		
+		if(languageEntity2 != null) {
+			if() {
+				if() {
+					save
+				}else {
+					System.out.println();
+				}
+			}else {
+				System.out.println();
+			}
+			
+		}else {
+			System.out.println("La-----------");
+		}
+		
+		lifeStyleRepository.save(lifeStyle);
+
+		return lifeStyle.getLifestyle_id();
+	}
+
+
+	@Override
+	public int updateLifeStyle(LifeStyleEntity lifeStyle) {
+		lifeStyleRepository.save(lifeStyle);
+
+		return lifeStyle.getLifestyle_id();
+		
+	}
+
+
+	@Override
+	public int deleteLifeStyle(int lifestyle_id) {
+		lifeStyleRepository.deleteById(lifestyle_id);
+		return 1;
+	}
+
+
+	@Override
+	public List<LifeStyleEntity> getAll() {
+		
+		 List<LifeStyleEntity> lifeStyle=lifeStyleRepository.findAll();
+		
+		return lifeStyle;
+	}
+
+}
