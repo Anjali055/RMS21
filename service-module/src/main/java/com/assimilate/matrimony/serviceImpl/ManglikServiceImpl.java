@@ -26,4 +26,22 @@ public class ManglikServiceImpl implements ManglikService{
 		List<ManglikEntity>list=manglikRepository.findAll();
 		return list;
 	}
+import com.assimilate.matrimony.domain.Manglik;
+import com.assimilate.matrimony.service.ManglikService;
+
+@Service
+public class ManglikServiceImpl implements ManglikService {
+
+	
+	@Autowired
+	ManglikRepository manglikRepository;
+
+	@Override
+	public List<Manglik> getAllManglik() {
+		return manglikRepository.findAll();
+		
+	}
+	
+
+
 }

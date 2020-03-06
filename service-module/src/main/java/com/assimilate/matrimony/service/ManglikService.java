@@ -9,5 +9,10 @@ public interface ManglikService {
 	void createManglik(ManglikEntity manglik);
 
 	public List<ManglikEntity> getAllManglik();
+import com.assimilate.matrimony.domain.Manglik;
+
+public interface ManglikService {
+
+	public List<Manglik> getAllManglik();
 
 }

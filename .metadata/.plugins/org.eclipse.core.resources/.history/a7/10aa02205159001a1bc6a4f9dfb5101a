@@ -1,8 +1,0 @@
-package com.assimilate.matrimony.domain;
-public class LoginDto {
-
-    private String username;
-    private String password;
-	
-	//getters and setters
-}

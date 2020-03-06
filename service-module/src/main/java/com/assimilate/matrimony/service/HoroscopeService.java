@@ -9,5 +9,10 @@ public interface HoroscopeService {
 	void createHoroscope(HoroscopeEntity horoscope);
 
 	public List<HoroscopeEntity> getAllHoroscope();
+import com.assimilate.matrimony.domain.Horoscope;
+
+public interface HoroscopeService {
+
+	List<Horoscope> getAllHoroscope();
 
 }

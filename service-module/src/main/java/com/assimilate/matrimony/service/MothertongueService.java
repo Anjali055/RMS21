@@ -10,5 +10,10 @@ public interface MothertongueService {
 
 	public List<MothertongueEntity> geAllMothertongue();
 
+import com.assimilate.matrimony.domain.Mothertongue;
+
+public interface MothertongueService {
+
+	public List<Mothertongue> getAllMothertongue();
 
 }

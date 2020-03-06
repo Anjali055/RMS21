@@ -1,6 +1,10 @@
 
 package com.assimilate.matrimony.restcontroller;
 
+import static com.assimilate.matrimony.common.MatrimonyConstants.ALL_DRESS_STYLE;
+import static com.assimilate.matrimony.common.MatrimonyConstants.ALL_HOBBIES;
+import static com.assimilate.matrimony.common.MatrimonyConstants.ALL_INTEREST;
+import static com.assimilate.matrimony.common.MatrimonyConstants.ALL_SPORTS;
 import static com.assimilate.matrimony.common.MatrimonyConstants.API;
 import static com.assimilate.matrimony.common.MatrimonyConstants.DELETE_LIFE_STYLE;
 import static com.assimilate.matrimony.common.MatrimonyConstants.GET_ALL_LANGUAGES;
@@ -14,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +28,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.common.MatrimonyConstants;
+import com.assimilate.matrimony.common.RecordNotFoundException;
 import com.assimilate.matrimony.domain.DressStyleEntity;
 import com.assimilate.matrimony.domain.HobbiesEntity;
 import com.assimilate.matrimony.domain.InterestEntity;
@@ -34,7 +39,9 @@ import com.assimilate.matrimony.service.LanguageService;
 import com.assimilate.matrimony.service.LifeStyleService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(API)
+
 public class LifeStyleRestController {
 
 	@Autowired
@@ -45,23 +52,23 @@ public class LifeStyleRestController {
 
 	@PostMapping(POST_LIFE_STYLE)
 
-	public LifeStyleEntity postLifeStyle(@RequestBody LifeStyleEntity lifeStyle) {
+	public ResponseEntity<LifeStyleEntity> postLifeStyle(@RequestBody LifeStyleEntity lifeStyle)
+			throws RecordNotFoundException {
 
-		System.out.println("lifeStyle--------"+lifeStyle);
+		System.out.println("lifeStyle--------" + lifeStyle);
 		lifeStyleService.postLifeStyle(lifeStyle);
-		
 
-		return lifeStyle;
+		return new ResponseEntity<LifeStyleEntity>(lifeStyle, new HttpHeaders(), HttpStatus.CREATED);
 
 	}
 
 	@PutMapping(UPDATE_LIFE_STYLE)
 
-	public LifeStyleEntity updateLifeStyle(@RequestBody LifeStyleEntity lifeStyle) {
+	public ResponseEntity<LifeStyleEntity> updateLifeStyle(@RequestBody LifeStyleEntity lifeStyle,@PathVariable("user_id") int user_id,@PathVariable("lifestyle_id") int lifestyle_id) {
 
-		lifeStyleService.updateLifeStyle(lifeStyle);
+		lifeStyleService.updateLifeStyle(lifeStyle,user_id,lifestyle_id);
 
-		return lifeStyle;
+		return new ResponseEntity<LifeStyleEntity>(lifeStyle, new HttpHeaders(), HttpStatus.OK);
 
 	}
 
@@ -80,44 +87,35 @@ public class LifeStyleRestController {
 		return language;
 	}
 
-//	@GetMapping("/language/getLanguageById/{getlanguage_id}")
-//	public List<Language> getLanguageById(@PathVariable("language_id")int language_id){
-//		
-//		List<Language> language=languageService.getLanguageById(language_id);
-//		return language;
-//	}
-
 	@GetMapping(GET_ALL_LIFE_STYLES)
 	public ResponseEntity<List<LifeStyleEntity>> getAll() {
 		List<LifeStyleEntity> lifeStyle = lifeStyleService.getAll();
-		return new ResponseEntity<List<LifeStyleEntity>>(lifeStyle,new HttpHeaders(),HttpStatus.OK);
+		return new ResponseEntity<List<LifeStyleEntity>>(lifeStyle, new HttpHeaders(), HttpStatus.OK);
 
 	}
-	
-	@GetMapping(MatrimonyConstants.ALL_HOBBIES)
-	public List<HobbiesEntity> getAllHobbies(){
-		List<HobbiesEntity> list=lifeStyleService.getAllHobbies();
-		return list;
+
+	@GetMapping(ALL_HOBBIES)
+	public ResponseEntity<List<HobbiesEntity>> getAllHobbies() {
+		List<HobbiesEntity> list = lifeStyleService.getAllHobbies();
+		return new ResponseEntity<List<HobbiesEntity>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
-	
-	
-	@GetMapping(MatrimonyConstants.ALL_INTEREST)
-	public List<InterestEntity> getAllInterest(){
-		List<InterestEntity> list=lifeStyleService.getAllInterest();
-		return list;
+
+	@GetMapping(ALL_INTEREST)
+	public ResponseEntity<List<InterestEntity>> getAllInterest() {
+		List<InterestEntity> list = lifeStyleService.getAllInterest();
+		return new ResponseEntity<List<InterestEntity>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
-	
-	@GetMapping(MatrimonyConstants.ALL_SPORTS)
-	public List<SportsEntity> getAllSports(){
-		List<SportsEntity> list=lifeStyleService.getAllSports();
-		return list;
+
+	@GetMapping(ALL_SPORTS)
+	public ResponseEntity<List<SportsEntity>> getAllSports() {
+		List<SportsEntity> list = lifeStyleService.getAllSports();
+		return new ResponseEntity<List<SportsEntity>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
-	
-	@GetMapping(MatrimonyConstants.ALL_DRESS_STYLE)
-	public List<DressStyleEntity> getAllDressStyle(){
-		List<DressStyleEntity> list=lifeStyleService.getAllDressStyle();
-		return list;
+
+	@GetMapping(ALL_DRESS_STYLE)
+	public ResponseEntity<List<DressStyleEntity>> getAllDressStyle() {
+		List<DressStyleEntity> list = lifeStyleService.getAllDressStyle();
+		return new ResponseEntity<List<DressStyleEntity>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
-	
-	
+
 }

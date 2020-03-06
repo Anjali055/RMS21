@@ -8,11 +8,6 @@ public class MatrimonyConstants {
 	public final static String GET_ALL_USER="/getalluser";
 	
 	
-	
-	
-	
-	
-	
 	public final static String POST_PROFILE_DETAILS="/profiledetails/create_profile_details";
 	public final static String UPDATE_PROFILE_DETAILS = "/profileDetails/updateProfileDetails/{user_id}/{profile_details_id}";
 	public final static String DELETE_PROFILE_DETAILS="/profiledetails/{profile_details_id}";
@@ -29,9 +24,8 @@ public class MatrimonyConstants {
 	
 	
 	
-	
 	public final static String POST_LIFE_STYLE="/lifeStyle/postLifeStyle";
-	public final static String UPDATE_LIFE_STYLE="/lifeStyle/updateLifeStyle";
+	public final static String UPDATE_LIFE_STYLE="/lifeStyle/updateLifeStyle/{user_id}/{lifestyle_id}";
 	public final static String DELETE_LIFE_STYLE="/lifeStyle/deleteLifeStyle/{lifestyle_id}";
 	public final static String GET_ALL_LIFE_STYLES="/getAll";
 	public final static String GET_ALL_LANGUAGES="/getAllLanguage";

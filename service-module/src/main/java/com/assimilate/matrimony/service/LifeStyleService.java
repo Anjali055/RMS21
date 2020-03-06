@@ -12,7 +12,7 @@ public interface LifeStyleService {
 
 	public LifeStyleEntity postLifeStyle(LifeStyleEntity lifeStyle);
 
-	public int updateLifeStyle(LifeStyleEntity lifeStyle);
+	public int updateLifeStyle(LifeStyleEntity lifeStyle, int user_id, int lifestyle_id);
 
 	public int deleteLifeStyle(int lifestyle_id);
 

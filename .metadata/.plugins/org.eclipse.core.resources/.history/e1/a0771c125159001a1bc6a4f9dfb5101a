@@ -1,9 +1,0 @@
-package com.assimilate.matrimony.serviceImpl;
-
-import com.assimilate.matrimony.service.UsersService;
-
-public class UsersServiceImpl implements UsersService{
-	
-	
-
-}

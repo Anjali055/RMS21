@@ -25,4 +25,24 @@ public class HoroscopeServiceImpl implements  HoroscopeService{
 		return list;
 	}
 
+import com.assimilate.matrimony.domain.Horoscope;
+import com.assimilate.matrimony.service.HoroscopeService;
+
+@Service
+public class HoroscopeServiceImpl implements HoroscopeService {
+
+	@Autowired
+	
+	HoroscopeRepository horoscopeRepository;
+
+	@Override
+	public List<Horoscope> getAllHoroscope() {
+	
+		 return horoscopeRepository.findAll();
+	}
+	
+	
+	
+	
+	
 }

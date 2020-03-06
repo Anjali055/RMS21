@@ -28,6 +28,8 @@ public class StudentController {
 	
 	@PostMapping(path="/save")
 	public studentEntity saveMethod(@RequestBody studentEntity student){
+	public student saveMethod(@RequestBody student student){
+		System.out.println("controller"+student);
 		
 		return studentimpl.save(student) ;
 		

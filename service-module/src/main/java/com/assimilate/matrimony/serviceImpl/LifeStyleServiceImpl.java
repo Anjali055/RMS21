@@ -76,11 +76,11 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 								lifeStyleRepository.save(lifeStyle);
 
 							} else {
-
+									 System.out.println("User Not Found");
 							}
 
 						} else {
-
+							
 						}
 
 					} else {
@@ -102,8 +102,21 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 	}
 
 	@Override
-	public int updateLifeStyle(LifeStyleEntity lifeStyle) {
-		lifeStyleRepository.save(lifeStyle);
+	public int updateLifeStyle(LifeStyleEntity lifeStyle, int user_id, int lifestyle_id) {
+		Optional<UserEntity> userEntity=userRepository.findById(user_id);
+		if (userEntity != null) {
+			Optional<LifeStyleEntity> lifeStyleEntity=lifeStyleRepository.findById(lifestyle_id);
+			if (lifeStyleEntity !=null) {
+				lifeStyleRepository.save(lifeStyle);
+				
+			} else {
+
+			}
+			
+		} else {
+
+		}
+		
 
 		return lifeStyle.getLifestyle_id();
 

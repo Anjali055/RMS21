@@ -31,4 +31,22 @@ public class MothertongueServiceImpl implements MothertongueService{
 	}
 
 	
+import com.assimilate.matrimony.domain.Mothertongue;
+import com.assimilate.matrimony.service.MothertongueService;
+
+@Service
+public class MothertongueServiceImpl implements MothertongueService {
+	
+	
+	@Autowired
+	MothertongueRepository mothertongueRepository;
+
+	@Override
+	public List<Mothertongue> getAllMothertongue() {
+		
+		return mothertongueRepository.findAll();
+
+		
+	}
+
 }
