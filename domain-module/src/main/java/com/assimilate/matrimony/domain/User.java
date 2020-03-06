@@ -19,6 +19,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 @Transactional
 @Entity
 @Table(name="user")
@@ -67,8 +68,6 @@ public class User {
 	@LastModifiedDate
 	@Column(name = "updated_At")
 	private Date updated_At;
-	
-
 	
 	@Column(name = "updated_By")
 	private String updated_By;

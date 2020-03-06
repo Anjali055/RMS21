@@ -1,5 +1,6 @@
 package com.assimilate.matrimony.serviceImpl;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,21 +58,19 @@ public class UserServiceImpl implements UserService {
 				userRepositary.save(userOptional);
 			}
 		}
-		return 1;
+		return userOptional.getUser_id();
 	}
-	
 
 	@Override
 	public List<User> booleantrue() {
 		return userRepositary.findAllByisDelete(0);
 	}
-	
 
 	@Override
 	public User userDeletebyId(int user_id) {
 		User userob = null;
 		User userop = userRepositary.getOne(user_id);
-		if (userop!= null) {
+		if (userop != null) {
 			if (userop.getIsDelete() != 1) {
 				userob = userop;
 				return userob;
@@ -81,10 +80,62 @@ public class UserServiceImpl implements UserService {
 		}
 		return userob;
 	}
-	
-	
-	
-	
-	
-	
+//
+//	@Override
+//	public long getcountno() {
+//		long p = userRepositary.countByIsDelete(0);
+//		return p;
+//	}
+
+//   ****************
+	@Override
+	public List<User> getAllGrooms() {
+		List<User> op = new LinkedList<User>();
+		List<User> u1 = userRepositary.findAll();
+		for (User u : u1) {
+			if ((u.getIsDelete() == 0) && ("male".equals(u.getGender()))) {
+				op.add(u);
+			}
+		}
+		return op;
+	}
+
+	@Override
+	public List<User> getAllBridges() {
+
+		return userRepositary.findByIsDeleteAndGender(0, "female");
+
+	}
+
+	@Override
+	public long getcountno() {
+
+		int count = 0;
+		List<User> user1 = userRepositary.findAll();
+		for (User uuu : user1) {
+			if (uuu.getIsDelete() == 0) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+//      ***************
+//	@Override
+//	public List<User> getAllBridges() {
+//		List<User> uip = new LinkedList<User>();
+//		List<User> u1 = userRepositary.findAll();
+//		for (User u : u1) {
+//			if (uip != null) {
+//				if ((u.getIsDelete() == 0) && ("female".equals(u.getGender()))) {
+//					uip.add(u);
+//				}
+//			}
+//		}		
+//		return uip;
+//
+//	}
+//
+//      ***************
+
 }

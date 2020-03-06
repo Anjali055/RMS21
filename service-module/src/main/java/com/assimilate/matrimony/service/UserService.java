@@ -21,18 +21,11 @@ public interface UserService {
 
 	public User userDeletebyId(int user_id);
 
+	public long getcountno();
 
+	public List<User> getAllGrooms();
 
-
-
-
-
-	
-
-
-
-
-
+	public List<User> getAllBridges();
 
 
 }
