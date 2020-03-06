@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.assimilate.matrimony.domain.student;
-import com.assimilate.matrimony.service.StudentImpl;
+import com.assimilate.matrimony.serviceImpl.StudentImpl;
 
 
 @RestController

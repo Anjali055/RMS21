@@ -1,4 +1,4 @@
-package com.assimilate.matrimony.service;
+package com.assimilate.matrimony.serviceImpl;
 
 import java.util.List;
 
