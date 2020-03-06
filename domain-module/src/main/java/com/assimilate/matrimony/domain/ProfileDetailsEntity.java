@@ -76,7 +76,7 @@ public class ProfileDetailsEntity {
 	
 	@OneToOne()
 	@JoinColumn(name = "subcaste_id")
-	private SubCasteEntity subCaste;
+	private SubcasteEntity subCaste;
 	
 	@OneToOne()
 	@JoinColumn(name = "manglik_id")
@@ -90,7 +90,7 @@ public class ProfileDetailsEntity {
 	
 	@OneToOne()
 	@JoinColumn(name = "marital_status_id")
-	private Marital_StatusEntity marital_status;
+	private Marital_statusEntity marital_status;
 	
 	@OneToOne()
     @JoinColumn(name="user_id")
@@ -192,11 +192,11 @@ public class ProfileDetailsEntity {
 		this.caste = caste;
 	}
 
-	public SubCasteEntity getSubCaste() {
+	public SubcasteEntity getSubCaste() {
 		return subCaste;
 	}
 
-	public void setSubCaste(SubCasteEntity subCaste) {
+	public void setSubCaste(SubcasteEntity subCaste) {
 		this.subCaste = subCaste;
 	}
 
@@ -216,11 +216,11 @@ public class ProfileDetailsEntity {
 		this.horoscope = horoscope;
 	}
 
-	public Marital_StatusEntity getMarital_status() {
+	public Marital_statusEntity getMarital_status() {
 		return marital_status;
 	}
 
-	public void setMarital_status(Marital_StatusEntity marital_status) {
+	public void setMarital_status(Marital_statusEntity marital_status) {
 		this.marital_status = marital_status;
 	}
 
@@ -234,8 +234,8 @@ public class ProfileDetailsEntity {
 
 	public ProfileDetailsEntity(Integer profile_details_id, String create_profile_by, String brides_name,
 			String birthdate, String height, Date created_At, String created_By, Date updated_At, String updated_By,
-			MothertongueEntity mothertongue, ReligionEntity religion, CasteEntity caste, SubCasteEntity subCaste,
-			ManglikEntity manglik, HoroscopeEntity horoscope, Marital_StatusEntity marital_status, UserEntity user) {
+			MothertongueEntity mothertongue, ReligionEntity religion, CasteEntity caste, SubcasteEntity subCaste,
+			ManglikEntity manglik, HoroscopeEntity horoscope, Marital_statusEntity marital_status, UserEntity user) {
 		super();
 		this.profile_details_id = profile_details_id;
 		this.create_profile_by = create_profile_by;

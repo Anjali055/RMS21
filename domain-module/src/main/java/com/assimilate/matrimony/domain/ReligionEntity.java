@@ -1,4 +1,4 @@
- package com.assimilate.matrimony.domain;
+package com.assimilate.matrimony.domain;
 
 import java.util.List;
 
@@ -11,75 +11,66 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 @Entity
-@Table(name="religion")
+@Table(name = "religion")
 public class ReligionEntity {
-	
+
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer religion_id;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	
+	private int religion_id;
+	
 	@Column()
 	private String religion_name;
 	
-	
 	@OneToMany(targetEntity = CasteEntity.class)
 	@JoinColumn(name = "religion_id",referencedColumnName = "religion_id")
-	@Autowired
-	private List<CasteEntity> casteobject;
-
-
-	@Override
-	public String toString() {
-		return "ReligionEntity [religion_id=" + religion_id + ", religion_name=" + religion_name + ", casteobject="
-				+ casteobject + "]";
-	}
-
+	
+	private List<CasteEntity> casteObject;
 
 	public ReligionEntity() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
-
-	public ReligionEntity(Integer religion_id, String religion_name, List<CasteEntity> casteobject) {
+	public ReligionEntity(int religion_id, String religion_name, List<CasteEntity> casteObject) {
 		super();
 		this.religion_id = religion_id;
 		this.religion_name = religion_name;
-		this.casteobject = casteobject;
+		this.casteObject = casteObject;
 	}
 
-
-	public Integer getReligion_id() {
+	public int getReligion_id() {
 		return religion_id;
 	}
 
-
-	public void setReligion_id(Integer religion_id) {
+	public void setReligion_id(int religion_id) {
 		this.religion_id = religion_id;
 	}
-
 
 	public String getReligion_name() {
 		return religion_name;
 	}
 
-
 	public void setReligion_name(String religion_name) {
 		this.religion_name = religion_name;
 	}
 
-
-	public List<CasteEntity> getCasteobject() {
-		return casteobject;
+	public List<CasteEntity> getCasteObject() {
+		return casteObject;
 	}
 
+	public void setCasteObject(List<CasteEntity> casteObject) {
+		this.casteObject = casteObject;
+	}
 
-	public void setCasteobject(List<CasteEntity> casteobject) {
-		this.casteobject = casteobject;
+	@Override
+	public String toString() {
+		return "Religion [religion_id=" + religion_id + ", religion_name=" + religion_name + ", casteObject="
+				+ casteObject + "]";
 	}
 	
-	}
-
+	
+	
+}

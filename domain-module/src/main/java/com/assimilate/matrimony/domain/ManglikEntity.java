@@ -1,29 +1,40 @@
 package com.assimilate.matrimony.domain;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="manglik")
+@Table(name = "manglik")
 public class ManglikEntity {
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private Integer manglik_id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	private int manglik_id;
 	
 	@Column()
 	private String manglik_name;
 
-	public Integer getManglik_id() {
+	public ManglikEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public ManglikEntity(int manglik_id, String manglik_name) {
+		super();
+		this.manglik_id = manglik_id;
+		this.manglik_name = manglik_name;
+	}
+
+	public int getManglik_id() {
 		return manglik_id;
 	}
 
-	public void setManglik_id(Integer manglik_id) {
+	public void setManglik_id(int manglik_id) {
 		this.manglik_id = manglik_id;
 	}
 
@@ -35,19 +46,12 @@ public class ManglikEntity {
 		this.manglik_name = manglik_name;
 	}
 
-	public ManglikEntity(Integer manglik_id, String manglik_name) {
-		super();
-		this.manglik_id = manglik_id;
-		this.manglik_name = manglik_name;
-	}
-
-	public ManglikEntity() {
-		super();
-	}
-
 	@Override
 	public String toString() {
-		return "ManglikEntity [manglik_id=" + manglik_id + ", manglik_name=" + manglik_name + "]";
+		return "Manglik [manglik_id=" + manglik_id + ", manglik_name=" + manglik_name + "]";
 	}
+	
+	
+	
 	
 }

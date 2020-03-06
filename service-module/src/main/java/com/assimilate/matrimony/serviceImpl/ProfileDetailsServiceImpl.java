@@ -16,7 +16,7 @@ import com.assimilate.matrimony.dao.ReligionRepository;
 import com.assimilate.matrimony.dao.UserRepository;
 import com.assimilate.matrimony.domain.HoroscopeEntity;
 import com.assimilate.matrimony.domain.ManglikEntity;
-import com.assimilate.matrimony.domain.Marital_StatusEntity;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
 import com.assimilate.matrimony.domain.MothertongueEntity;
 import com.assimilate.matrimony.domain.ProfileDetailsEntity;
 import com.assimilate.matrimony.domain.ReligionEntity;
@@ -95,8 +95,8 @@ public class ProfileDetailsServiceImpl implements ProfileDetailsService {
 
 					if (horoscopeEntity2 != null) {
 
-						Marital_StatusEntity marital_StatusEntity = profileDetails.getMarital_status();
-						Optional<Marital_StatusEntity> marital_StatusEntity2 = marital_StatusRepository
+						Marital_statusEntity marital_StatusEntity = profileDetails.getMarital_status();
+						Optional<Marital_statusEntity> marital_StatusEntity2 = marital_StatusRepository
 								.findById(manglikEntity.getManglik_id());
 
 						if (marital_StatusEntity2 != null) {
@@ -201,8 +201,8 @@ public class ProfileDetailsServiceImpl implements ProfileDetailsService {
 	}
 
 	@Override
-	public List<Marital_StatusEntity> getAllMarital_Status() {
-		List<Marital_StatusEntity> list=marital_StatusRepository.findAll();
+	public List<Marital_statusEntity> getAllMarital_Status() {
+		List<Marital_statusEntity> list=marital_StatusRepository.findAll();
 		return list;
 	}
 

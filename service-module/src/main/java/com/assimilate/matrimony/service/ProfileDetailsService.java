@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.assimilate.matrimony.domain.HoroscopeEntity;
 import com.assimilate.matrimony.domain.ManglikEntity;
-import com.assimilate.matrimony.domain.Marital_StatusEntity;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
 import com.assimilate.matrimony.domain.MothertongueEntity;
 import com.assimilate.matrimony.domain.ProfileDetailsEntity;
 import com.assimilate.matrimony.domain.ReligionEntity;
@@ -35,7 +35,7 @@ public interface ProfileDetailsService {
 
 	public List<HoroscopeEntity> getAllHoroscope();
 
-	public List<Marital_StatusEntity> getAllMarital_Status();
+	public List<Marital_statusEntity> getAllMarital_Status();
 
 	public List<UserEntity> getAllUser();
 

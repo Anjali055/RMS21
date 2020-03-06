@@ -67,6 +67,7 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
 	@GetMapping(GET_ALL_USER)
 	public List<UserEntity> getUser(){
 	  return  userService.getUser();
@@ -80,6 +81,8 @@ public class UserController {
 		userService.createUser(user);
 		return user;
 	}
+	
+	
 
 }
 >>>>>>> f981900817d7a49a6148140e8821500d94310551

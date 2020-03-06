@@ -11,28 +11,47 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
-@Table(name="caste")
+@Table(name = "caste")
 public class CasteEntity {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer caste_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	
+	private int caste_id;
 	
 	@Column()
 	private String caste_name;
 	
 	private int religion_id;
 	
-	@OneToMany(targetEntity = SubCasteEntity.class)
-	@JoinColumn(name ="caste_id" ,referencedColumnName = "caste_id" )
-	private List<SubCasteEntity>  subCasteEntity;
+	@OneToMany(targetEntity = SubcasteEntity.class)
+	@JoinColumn(name = "caste_id",referencedColumnName = "caste_id")
+	
+	
+	@Autowired
+	private List<SubcasteEntity> subcasteObject;
 
-	public Integer getCaste_id() {
+	public CasteEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CasteEntity(int caste_id, String caste_name, int religion_id, List<SubcasteEntity> subcasteObject) {
+		super();
+		this.caste_id = caste_id;
+		this.caste_name = caste_name;
+		this.religion_id = religion_id;
+		this.subcasteObject = subcasteObject;
+	}
+
+	public int getCaste_id() {
 		return caste_id;
 	}
 
-	public void setCaste_id(Integer caste_id) {
+	public void setCaste_id(int caste_id) {
 		this.caste_id = caste_id;
 	}
 
@@ -52,31 +71,21 @@ public class CasteEntity {
 		this.religion_id = religion_id;
 	}
 
-	public List<SubCasteEntity> getSubCasteEntity() {
-		return subCasteEntity;
+	public List<SubcasteEntity> getSubcasteObject() {
+		return subcasteObject;
 	}
 
-	public void setSubCasteEntity(List<SubCasteEntity> subCasteEntity) {
-		this.subCasteEntity = subCasteEntity;
-	}
-
-	public CasteEntity(Integer caste_id, String caste_name, int religion_id, List<SubCasteEntity> subCasteEntity) {
-		super();
-		this.caste_id = caste_id;
-		this.caste_name = caste_name;
-		this.religion_id = religion_id;
-		this.subCasteEntity = subCasteEntity;
-	}
-
-	public CasteEntity() {
-		super();
+	public void setSubcasteObject(List<SubcasteEntity> subcasteObject) {
+		this.subcasteObject = subcasteObject;
 	}
 
 	@Override
 	public String toString() {
-		return "CasteEntity [caste_id=" + caste_id + ", caste_name=" + caste_name + ", religion_id=" + religion_id
-				+ ", subCasteEntity=" + subCasteEntity + "]";
+		return "Caste [caste_id=" + caste_id + ", caste_name=" + caste_name + ", religion_id=" + religion_id
+				+ ", subcasteObject=" + subcasteObject + "]";
 	}
 	
 	
-	}
+	
+	
+}

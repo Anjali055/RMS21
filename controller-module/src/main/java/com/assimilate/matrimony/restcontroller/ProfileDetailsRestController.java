@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.assimilate.matrimony.common.RecordNotFoundException;
 import com.assimilate.matrimony.domain.HoroscopeEntity;
 import com.assimilate.matrimony.domain.ManglikEntity;
-import com.assimilate.matrimony.domain.Marital_StatusEntity;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
 import com.assimilate.matrimony.domain.MothertongueEntity;
 import com.assimilate.matrimony.domain.ProfileDetailsEntity;
 import com.assimilate.matrimony.domain.ReligionEntity;
@@ -139,9 +139,15 @@ public class ProfileDetailsRestController {
 	}
 	
 	@GetMapping(All_MARITAL_STATUS)
+
+	public List<Marital_statusEntity> getAllMarital_Status() throws RecordNotFoundException{
+		List<Marital_statusEntity> list=profileDetailsService.getAllMarital_Status();
+		return list;
+
 	public ResponseEntity<List<Marital_StatusEntity>> getAllMarital_Status() throws RecordNotFoundException{
 		List<Marital_StatusEntity> list=profileDetailsService.getAllMarital_Status();
 		return new ResponseEntity<List<Marital_StatusEntity>>(list,new HttpHeaders(),HttpStatus.OK);
+
 	}
 	
 	@GetMapping(All_USER)

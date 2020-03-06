@@ -2,29 +2,39 @@ package com.assimilate.matrimony.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="mothertongue")
+@Table(name = "mothertongue")
 public class MothertongueEntity {
 
 	@Id
-	//@GeneratedValue(strategy = IDENTITY)
-	private Integer mothertongue_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	private int mothertongue_id;
 	
 	@Column()
 	private String mothertongue_name;
-	
-	
-//	@OneToOne (mappedBy ="mothertongue" )
-//	public ProfileDetailsEntity profileDetailsEntity;
 
-	public Integer getMothertongue_id() {
+	public MothertongueEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public MothertongueEntity(int mothertongue_id, String mothertongue_name) {
+		super();
+		this.mothertongue_id = mothertongue_id;
+		this.mothertongue_name = mothertongue_name;
+	}
+
+	public int getMothertongue_id() {
 		return mothertongue_id;
 	}
 
-	public void setMothertongue_id(Integer mothertongue_id) {
+	public void setMothertongue_id(int mothertongue_id) {
 		this.mothertongue_id = mothertongue_id;
 	}
 
@@ -36,24 +46,10 @@ public class MothertongueEntity {
 		this.mothertongue_name = mothertongue_name;
 	}
 
-	public MothertongueEntity(Integer mothertongue_id, String mothertongue_name) {
-		super();
-		this.mothertongue_id = mothertongue_id;
-		this.mothertongue_name = mothertongue_name;
-	}
-
-	public MothertongueEntity() {
-		super();
-	}
-
 	@Override
 	public String toString() {
-		return "MothertongueEntity [mothertongue_id=" + mothertongue_id + ", mothertongue_name=" + mothertongue_name
-				+ "]";
+		return "Mothertongue [mothertongue_id=" + mothertongue_id + ", mothertongue_name=" + mothertongue_name + "]";
 	}
 	
-
-
 	
-
-	}
+}

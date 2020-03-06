@@ -6,16 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assimilate.matrimony.dao.ReligionRepository;
-<<<<<<< HEAD
 import com.assimilate.matrimony.domain.Religion;
-=======
 import com.assimilate.matrimony.domain.ReligionEntity;
->>>>>>> f981900817d7a49a6148140e8821500d94310551
 import com.assimilate.matrimony.service.ReligionService;
 
 @Service
 public class ReligionServiceImpl implements ReligionService {
-<<<<<<< HEAD
 
 	
 	@Autowired
@@ -29,7 +25,6 @@ public class ReligionServiceImpl implements ReligionService {
 	}
 	
 	
-=======
 	
 	@Autowired
 	private ReligionRepository religionServiceRepository;
@@ -42,5 +37,13 @@ public class ReligionServiceImpl implements ReligionService {
 		return religionEntities;
 	}
 
->>>>>>> f981900817d7a49a6148140e8821500d94310551
+
+
+	@Override
+	public void createReligion(ReligionEntity religion) {
+		// TODO Auto-generated method stub
+		religionServiceRepository.save(religion);
+		
+	}
+
 }
