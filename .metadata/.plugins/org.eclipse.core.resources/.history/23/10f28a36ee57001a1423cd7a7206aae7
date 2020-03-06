@@ -1,0 +1,23 @@
+package com.assimilate.matrimony.service;
+
+import java.util.List;
+
+import com.assimilate.matrimony.domain.ProfileDetailsEntity;
+
+public interface ProfileDetailsService {
+
+	public int updateProfileDetails(ProfileDetailsEntity profileDetails);
+
+	public ProfileDetailsEntity createProfileDetails(ProfileDetailsEntity profileDetails);
+
+	public int deleteProfileDetails(int profile_details_id);
+
+	public List<ProfileDetailsEntity> getAll();
+
+	public int deleteprofileDetails(int user_id);
+
+	//public int UpdateByUserId(int user_id);
+
+	public ProfileDetailsEntity getUserById(int user_id);
+
+}

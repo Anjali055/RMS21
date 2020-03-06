@@ -1,0 +1,136 @@
+package com.assimilate.matrimony.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.assimilate.matrimony.dao.CasteRepository;
+import com.assimilate.matrimony.dao.MothertongueRepository;
+import com.assimilate.matrimony.dao.ProfileDetailsRepository;
+import com.assimilate.matrimony.dao.ReligionRepository;
+import com.assimilate.matrimony.dao.UserRepository;
+import com.assimilate.matrimony.domain.ProfileDetailsEntity;
+import com.assimilate.matrimony.domain.UserEntity;
+import com.assimilate.matrimony.service.ProfileDetailsService;
+
+@Service 
+public class ProfileDetailsServiceImpl implements ProfileDetailsService {
+
+	@Autowired
+	private ProfileDetailsRepository profileDetailsRepository;
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private MothertongueRepository mothertongueRepository;
+
+	@Autowired
+
+	private ReligionRepository religionRepository;
+
+	@Autowired
+	private CasteRepository casteRepository;
+
+	@Override
+	public ProfileDetailsEntity updateProfileDetails(ProfileDetailsEntity profileDetails, int user_id, int profile_details_id) {
+
+		Optional<UserEntity> user = userRepository.findById(user_id);
+		if (user != null) {
+			Optional<ProfileDetailsEntity> profileDetailsEntity = profileDetailsRepository.findById(profile_details_id);
+			
+			if (profileDetailsEntity != null) {
+				profileDetailsRepository.save(profileDetails);
+				return profileDetails;
+			} else {
+				System.out.println("Profile Details Not Found");
+			}
+
+		} else {
+			System.out.println("User Not Found");
+		}
+		ProfileDetailsEntity detailsEntity = profileDetailsRepository.save(profileDetails);
+		return detailsEntity;
+	}
+
+	@Override
+	public ProfileDetailsEntity createProfileDetails(ProfileDetailsEntity profileDetails) {
+
+		ProfileDetailsEntity details = profileDetailsRepository.save(profileDetails);
+
+//		
+//		MothertongueEntity mothertongue= new MothertongueEntity();
+//		mothertongue.setMothertongue_id(profileDetails.getMothertongue().getMothertongue_id());
+//		MothertongueEntity mothertongueEntity1=mothertongueRepository.save(mothertongue);
+//		
+//		
+//		ReligionEntity religion=new ReligionEntity();
+//		religion.setReligion_name(profileDetails.getReligion().getReligion_name());
+//		ReligionEntity entity=religionRepository.save(religion);
+//		
+//		
+//		CasteEntity caste=new CasteEntity();
+//		caste.setCaste_name(profileDetails.getCaste().getCaste_name());
+//		CasteEntity caste1=casteRepository.save(caste);
+//		
+//		
+//		
+//		
+//		
+//		profileDetails.setCaste(caste1);
+//		profileDetails.setReligion(entity);
+//		profileDetails.setMothertongue(mothertongueEntity1);
+//		
+//		profileDetailsRepository.save(profileDetails);
+//		
+
+		return profileDetails;
+	}
+
+	@Override
+	public int deleteProfileDetails(int user_id,int profile_details_id) {
+		
+		UserEntity user=UserRepository.deleteById(user_id);
+		
+		profileDetailsRepository.deleteById(profile_details_id);
+		return 1;
+	}
+
+	@Override
+	public List<ProfileDetailsEntity> getAll() {
+
+		List<ProfileDetailsEntity> list = profileDetailsRepository.findAll();
+
+		return list;
+	}
+
+	@Override
+	public int deleteprofileDetails(int user_id) {
+		
+		return profileDetailsRepository.deleteByUserId(user_id);
+	}
+
+//	@Override
+//	public int UpdateByUserId(int user_id) {
+//		int result=profileDetailsRepository.UpdateByUserId(user_id) 
+//		return result;
+//	}
+
+	@Override
+	public ProfileDetailsEntity getUserById(int user_id) {
+		Optional<ProfileDetailsEntity> optional = profileDetailsRepository.findById(user_id);
+		if (optional != null) {
+			return optional.get();
+		}
+		return null;
+	}
+
+//@Override
+//public int updateProfileDetails(ProfileDetailsEntity profileDetails, int user_id, int profile_details_id) {
+//	// TODO Auto-generated method stub
+//	return 0;
+//}
+
+}

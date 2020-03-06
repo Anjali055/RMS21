@@ -1,0 +1,10 @@
+package com.assimilate.matrimony.restcontroller.common;
+
+public class MatrimonyConstants {
+
+	public final static String API= "/api/user";
+	public final static String CREATE_USER="/create";
+
+	
+	//public final static String GET_ALL="/getAllAstro";
+}

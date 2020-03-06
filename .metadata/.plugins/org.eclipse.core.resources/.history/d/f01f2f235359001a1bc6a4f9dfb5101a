@@ -1,0 +1,33 @@
+package com.assimilate.matrimony.restcontroller;
+
+import static com.assimilate.matrimony.common.MatrimonyConstants.API;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.assimilate.matrimony.domain.ApiResponse;
+import com.assimilate.matrimony.domain.LoginDto;
+import com.assimilate.matrimony.domain.SignUpDto;
+import com.assimilate.matrimony.service.UsersService;
+@RestController
+@RequestMapping(API)
+public class UsersController {
+
+	
+	 @Autowired
+	    private UsersService userService;
+
+	    @PostMapping("/users")
+	    public ApiResponse signUp(@RequestBody SignUpDto signUpDto){
+	        return userService.signUp(signUpDto);
+	    }
+
+	    @PostMapping("/login")
+	    public ApiResponse login(@RequestBody LoginDto loginDto){
+	        return userService.login(loginDto);
+	    }
+	
+}

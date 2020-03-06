@@ -1,0 +1,5 @@
+package com.assimilate.matrimony.common;
+
+public class RecordNotFoundException {
+
+}

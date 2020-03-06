@@ -1,0 +1,7 @@
+package com.assimilate.matrimony.dao;
+public interface UserDao extends JpaRepository {
+
+    User findByUsername(String username);
+
+    User findByEmail(String email);
+}
