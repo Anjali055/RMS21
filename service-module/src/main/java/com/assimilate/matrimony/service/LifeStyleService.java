@@ -1,0 +1,31 @@
+package com.assimilate.matrimony.service;
+
+import java.util.List;
+
+import com.assimilate.matrimony.domain.DressStyleEntity;
+import com.assimilate.matrimony.domain.HobbiesEntity;
+import com.assimilate.matrimony.domain.InterestEntity;
+import com.assimilate.matrimony.domain.LifeStyleEntity;
+import com.assimilate.matrimony.domain.SportsEntity;
+
+public interface LifeStyleService {
+
+	public LifeStyleEntity postLifeStyle(LifeStyleEntity lifeStyle);
+
+	public int updateLifeStyle(LifeStyleEntity lifeStyle, int user_id, int lifestyle_id);
+
+	public int deleteLifeStyle(int lifestyle_id);
+
+	public List<LifeStyleEntity> getAll();
+
+	public List<HobbiesEntity> getAllHobbies();
+
+	public List<InterestEntity> getAllInterest();
+
+	public List<SportsEntity> getAllSports();
+
+	public List<DressStyleEntity> getAllDressStyle();
+
+	
+	
+}

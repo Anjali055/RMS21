@@ -1,0 +1,5 @@
+package com.assimilate.matrimony.dao;
+
+public interface Marital_StatusRepository {
+
+}

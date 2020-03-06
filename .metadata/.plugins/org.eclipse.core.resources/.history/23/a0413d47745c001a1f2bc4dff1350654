@@ -1,0 +1,9 @@
+package com.assimilate.matrimony.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.assimilate.matrimony.domain.SportsEntity;
+
+public interface SportsRepository extends JpaRepository<SportsEntity, Integer>{
+
+}
