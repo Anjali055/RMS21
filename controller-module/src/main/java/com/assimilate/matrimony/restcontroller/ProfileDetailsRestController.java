@@ -31,7 +31,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.common.MatrimonyConstants;
 import com.assimilate.matrimony.common.RecordNotFoundException;
 import com.assimilate.matrimony.domain.HoroscopeEntity;
 import com.assimilate.matrimony.domain.ManglikEntity;
@@ -121,34 +120,34 @@ public class ProfileDetailsRestController {
 	}
 	
 	@GetMapping(ALL_RELIGIONS)
-	public List<ReligionEntity> getAllReligion() throws RecordNotFoundException{
+	public ResponseEntity<List<ReligionEntity>> getAllReligion() throws RecordNotFoundException{
 		List<ReligionEntity> list=profileDetailsService.getAllReligion();
-		return list;
+		return new ResponseEntity<List<ReligionEntity>>(list,new HttpHeaders(),HttpStatus.OK);
 		
 	}
 	
 	@GetMapping(ALL_MANGLIK)
-	public List<ManglikEntity> getAllManglik() throws RecordNotFoundException{
+	public ResponseEntity<List<ManglikEntity>> getAllManglik() throws RecordNotFoundException{
 		List<ManglikEntity> list=profileDetailsService.getAllManglik();
-		return list;
+		return new ResponseEntity<List<ManglikEntity>>(list,new HttpHeaders(),HttpStatus.OK);
 	}
 	
 	@GetMapping(ALL_HOROSCOPE)
-	public List<HoroscopeEntity> getAllHoroscope() throws RecordNotFoundException{
+	public ResponseEntity<List<HoroscopeEntity>> getAllHoroscope() throws RecordNotFoundException{
 		List<HoroscopeEntity> list=profileDetailsService.getAllHoroscope();
-		return list;
+		return new ResponseEntity<List<HoroscopeEntity>>(list,new HttpHeaders(),HttpStatus.OK);
 	}
 	
 	@GetMapping(All_MARITAL_STATUS)
-	public List<Marital_StatusEntity> getAllMarital_Status() throws RecordNotFoundException{
+	public ResponseEntity<List<Marital_StatusEntity>> getAllMarital_Status() throws RecordNotFoundException{
 		List<Marital_StatusEntity> list=profileDetailsService.getAllMarital_Status();
-		return list;
+		return new ResponseEntity<List<Marital_StatusEntity>>(list,new HttpHeaders(),HttpStatus.OK);
 	}
 	
 	@GetMapping(All_USER)
-	public List<UserEntity> getAllUser() throws RecordNotFoundException{
+	public ResponseEntity<List<UserEntity>> getAllUser() throws RecordNotFoundException{
 		List<UserEntity> list=profileDetailsService.getAllUser();
-		return list;
+		return new ResponseEntity<List<UserEntity>>(list,new HttpHeaders(),HttpStatus.OK);
 	}
 	
 }
