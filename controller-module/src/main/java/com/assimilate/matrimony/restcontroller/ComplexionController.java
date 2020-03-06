@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Complexion;
+import com.assimilate.matrimony.domain.ComplexionEntity;
 import com.assimilate.matrimony.service.ComplexionService;
 
 @RestController
@@ -18,14 +18,14 @@ public class ComplexionController {
 	ComplexionService complexionService;
 	
 	@RequestMapping(path = "/createComplexion")
-	public Complexion createComplexion(@RequestBody Complexion complexion) {
+	public ComplexionEntity createComplexion(@RequestBody ComplexionEntity complexion) {
 		complexionService.createComplexion(complexion);
 		return complexion;
 	}
 	
 	@RequestMapping("/getAllComplexion")
-	public List<Complexion>getAll(){
-	List<Complexion>list=complexionService.getAllComplexion();
+	public List<ComplexionEntity>getAll(){
+	List<ComplexionEntity>list=complexionService.getAllComplexion();
 	return	list;
 	}
 }

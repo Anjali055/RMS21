@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="student")
-public class student  implements Serializable{
+public class studentEntity  implements Serializable{
 	/**
 	 * 
 	 */
@@ -23,12 +23,12 @@ public class student  implements Serializable{
 	@Column(name="name")
 	String name;
 	
-	student(){
+	studentEntity(){
 		
 		
 	}
 
-	public student(int id, String name) {
+	public studentEntity(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

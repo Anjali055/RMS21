@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assimilate.matrimony.dao.MothertongueRepository;
-import com.assimilate.matrimony.domain.Mothertongue;
+import com.assimilate.matrimony.domain.MothertongueEntity;
 import com.assimilate.matrimony.service.MothertongueService;
 
 @Service
@@ -17,7 +17,7 @@ public class MothertongueServiceImpl implements MothertongueService{
 	private MothertongueRepository mothertongueRepository;
 
 	@Override
-	public void createMothertongue(Mothertongue mothertongue) {
+	public void createMothertongue(MothertongueEntity mothertongue) {
 		
 		
 		mothertongueRepository.save(mothertongue);
@@ -25,8 +25,8 @@ public class MothertongueServiceImpl implements MothertongueService{
 	}
 
 	@Override
-	public List<Mothertongue> geAllMothertongue() {
-		List<Mothertongue>list=mothertongueRepository.findAll();
+	public List<MothertongueEntity> geAllMothertongue() {
+		List<MothertongueEntity>list=mothertongueRepository.findAll();
 		return list;
 	}
 

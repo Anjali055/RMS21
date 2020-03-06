@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Caste;
+import com.assimilate.matrimony.domain.CasteEntity;
 import com.assimilate.matrimony.service.CasteService;
 
 @RestController
@@ -19,7 +19,7 @@ public class CasteController {
 	CasteService casteService;
 	
 	@RequestMapping(path = "/createCaste")
-	public Caste createcaste(@RequestBody Caste caste) {
+	public CasteEntity createcaste(@RequestBody CasteEntity caste) {
 		casteService.createcaste(caste);
 		return caste;
 		
@@ -27,8 +27,8 @@ public class CasteController {
 
 	@RequestMapping("/getAllCaste")
 	
-	public List<Caste>getAllCaste(){
-		List<Caste>list=casteService.getAllCaste();
+	public List<CasteEntity>getAllCaste(){
+		List<CasteEntity>list=casteService.getAllCaste();
 		return list;
 	}
 }

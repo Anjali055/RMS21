@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "religion")
-public class Religion {
+public class ReligionEntity {
 
 	
 	@Id
@@ -24,17 +24,17 @@ public class Religion {
 	@Column()
 	private String religion_name;
 	
-	@OneToMany(targetEntity = Caste.class)
+	@OneToMany(targetEntity = CasteEntity.class)
 	@JoinColumn(name = "religion_id",referencedColumnName = "religion_id")
 	
-	private List<Caste> casteObject;
+	private List<CasteEntity> casteObject;
 
-	public Religion() {
+	public ReligionEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Religion(int religion_id, String religion_name, List<Caste> casteObject) {
+	public ReligionEntity(int religion_id, String religion_name, List<CasteEntity> casteObject) {
 		super();
 		this.religion_id = religion_id;
 		this.religion_name = religion_name;
@@ -57,11 +57,11 @@ public class Religion {
 		this.religion_name = religion_name;
 	}
 
-	public List<Caste> getCasteObject() {
+	public List<CasteEntity> getCasteObject() {
 		return casteObject;
 	}
 
-	public void setCasteObject(List<Caste> casteObject) {
+	public void setCasteObject(List<CasteEntity> casteObject) {
 		this.casteObject = casteObject;
 	}
 

@@ -2,13 +2,13 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Subcaste;
+import com.assimilate.matrimony.domain.SubcasteEntity;
 
 public interface SubcasteService {
 
-	void createsubcaste(Subcaste subcaste);
+	void createsubcaste(SubcasteEntity subcaste);
 
-	public List<Subcaste> getAllSubcaste();
+	public List<SubcasteEntity> getAllSubcaste();
 
 
 	

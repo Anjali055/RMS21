@@ -2,13 +2,13 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Mothertongue;
+import com.assimilate.matrimony.domain.MothertongueEntity;
 
 public interface MothertongueService {
 
-	void createMothertongue(Mothertongue mothertongue);
+	void createMothertongue(MothertongueEntity mothertongue);
 
-	public List<Mothertongue> geAllMothertongue();
+	public List<MothertongueEntity> geAllMothertongue();
 
 
 }

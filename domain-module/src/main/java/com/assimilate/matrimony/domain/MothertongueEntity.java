@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "mothertongue")
-public class Mothertongue {
+public class MothertongueEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +19,12 @@ public class Mothertongue {
 	@Column()
 	private String mothertongue_name;
 
-	public Mothertongue() {
+	public MothertongueEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Mothertongue(int mothertongue_id, String mothertongue_name) {
+	public MothertongueEntity(int mothertongue_id, String mothertongue_name) {
 		super();
 		this.mothertongue_id = mothertongue_id;
 		this.mothertongue_name = mothertongue_name;

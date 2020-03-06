@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "caste")
-public class Caste {
+public class CasteEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
@@ -27,19 +27,19 @@ public class Caste {
 	
 	private int religion_id;
 	
-	@OneToMany(targetEntity = Subcaste.class)
+	@OneToMany(targetEntity = SubcasteEntity.class)
 	@JoinColumn(name = "caste_id",referencedColumnName = "caste_id")
 	
 	
 	@Autowired
-	private List<Subcaste> subcasteObject;
+	private List<SubcasteEntity> subcasteObject;
 
-	public Caste() {
+	public CasteEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Caste(int caste_id, String caste_name, int religion_id, List<Subcaste> subcasteObject) {
+	public CasteEntity(int caste_id, String caste_name, int religion_id, List<SubcasteEntity> subcasteObject) {
 		super();
 		this.caste_id = caste_id;
 		this.caste_name = caste_name;
@@ -71,11 +71,11 @@ public class Caste {
 		this.religion_id = religion_id;
 	}
 
-	public List<Subcaste> getSubcasteObject() {
+	public List<SubcasteEntity> getSubcasteObject() {
 		return subcasteObject;
 	}
 
-	public void setSubcasteObject(List<Subcaste> subcasteObject) {
+	public void setSubcasteObject(List<SubcasteEntity> subcasteObject) {
 		this.subcasteObject = subcasteObject;
 	}
 

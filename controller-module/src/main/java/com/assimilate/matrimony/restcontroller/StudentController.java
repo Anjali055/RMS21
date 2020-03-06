@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.student;
+import com.assimilate.matrimony.domain.studentEntity;
 import com.assimilate.matrimony.service.StudentImpl;
 
 
@@ -19,7 +19,7 @@ public class StudentController {
 	StudentImpl studentimpl;
 	
 	@RequestMapping(path="/getall")
-	public List<student> getAll() {
+	public List<studentEntity> getAll() {
 		
 		return studentimpl.getall();
 		
@@ -27,7 +27,7 @@ public class StudentController {
 	
 	
 	@PostMapping(path="/save")
-	public student saveMethod(@RequestBody student student){
+	public studentEntity saveMethod(@RequestBody studentEntity student){
 		
 		return studentimpl.save(student) ;
 		

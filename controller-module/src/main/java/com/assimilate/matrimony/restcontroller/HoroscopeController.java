@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Horoscope;
+import com.assimilate.matrimony.domain.HoroscopeEntity;
 import com.assimilate.matrimony.service.HoroscopeService;
 
 @RestController
@@ -19,15 +19,15 @@ public class HoroscopeController {
 	HoroscopeService horoscopeService;
 	
 	@RequestMapping(path = "/createHoroscope")
-	public Horoscope createHoroscope(@RequestBody Horoscope horoscope) {
+	public HoroscopeEntity createHoroscope(@RequestBody HoroscopeEntity horoscope) {
 		
 		horoscopeService.createHoroscope(horoscope);
 		return horoscope;
 	}
 	
 	@RequestMapping("/getAllHoroscope")
-	public List<Horoscope>getAllHoroscope(){
-		List<Horoscope>list=horoscopeService.getAllHoroscope();
+	public List<HoroscopeEntity>getAllHoroscope(){
+		List<HoroscopeEntity>list=horoscopeService.getAllHoroscope();
 		return list;
 		
 	}

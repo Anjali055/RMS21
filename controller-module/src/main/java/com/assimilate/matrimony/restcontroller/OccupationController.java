@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Occupation;
+import com.assimilate.matrimony.domain.OccupationEntity;
 import com.assimilate.matrimony.service.OccupationService;
 
 @RestController
@@ -19,14 +19,14 @@ public class OccupationController {
 	OccupationService occupationService;
 	
 	@RequestMapping(path = "/createOccupation")
-	public Occupation createOccupation(@RequestBody Occupation occupation) {
+	public OccupationEntity createOccupation(@RequestBody OccupationEntity occupation) {
 		occupationService.createOccupation(occupation);
 		return occupation;
 	}
 		
 	@RequestMapping("/getAllOccupation")
-	public List<Occupation>getAll(){
-		List<Occupation>list=occupationService.getAllOccupation();
+	public List<OccupationEntity>getAll(){
+		List<OccupationEntity>list=occupationService.getAllOccupation();
 		return list;
 	}
 }

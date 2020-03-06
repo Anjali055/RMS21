@@ -2,28 +2,30 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Desireform;
-import com.assimilate.matrimony.domain.Marital_status;
-import com.assimilate.matrimony.domain.Mothertongue;
+import com.assimilate.matrimony.domain.DesireformEntity;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
+import com.assimilate.matrimony.domain.MothertongueEntity;
 import com.assimilate.matrimony.domain.UserEntity;
 
 public interface DesireformService {
 
-	int createDesireforms(Desireform desireform);
+	int createDesireforms(DesireformEntity desireform);
 
-	public List<Desireform> getAllDesireform();
+	public List<DesireformEntity> getAllDesireform();
 
-	Desireform getUserById(int user_id);
+	DesireformEntity getUserById(int user_id);
 
 	void deleteRecordBasedOnUser_id(int user_id);
 
-	Desireform updateRecordsById(Integer user_id, int desire_form_id, Desireform desireform);
+	DesireformEntity updateRecordsById(Integer user_id, int desire_form_id, DesireformEntity desireform);
 
-	public List<Marital_status> getAllMarital_Status();
+	public List<Marital_statusEntity> getAllMarital_Status();
 
 	public List<UserEntity> getAllUser();
 
-	public List<Mothertongue> getAllMothertongue();
+	public List<MothertongueEntity> getAllMothertongue();
+
+	//List<DesireformEntity> getAllMatching();
 
 
 	

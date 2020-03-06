@@ -2,12 +2,12 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Horoscope;
+import com.assimilate.matrimony.domain.HoroscopeEntity;
 
 public interface HoroscopeService {
 
-	void createHoroscope(Horoscope horoscope);
+	void createHoroscope(HoroscopeEntity horoscope);
 
-	public List<Horoscope> getAllHoroscope();
+	public List<HoroscopeEntity> getAllHoroscope();
 
 }

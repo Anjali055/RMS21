@@ -1,15 +1,23 @@
 package com.assimilate.matrimony.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.assimilate.matrimony.domain.Desireform;
+import com.assimilate.matrimony.domain.DesireformEntity;
 
 @Repository
-public interface DesireformRepository extends JpaRepository<Desireform, Integer>{
+public interface DesireformRepository extends JpaRepository<DesireformEntity, Integer>{
+
+	
+	/*
+	 * @Query("select * from desireform where age") List<DesireformEntity>
+	 * getAllMatching();
+	 */
 
 	
 	

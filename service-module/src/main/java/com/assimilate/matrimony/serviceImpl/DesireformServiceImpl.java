@@ -10,9 +10,9 @@ import com.assimilate.matrimony.dao.DesireformRepository;
 import com.assimilate.matrimony.dao.Marital_StatusRepository;
 import com.assimilate.matrimony.dao.MothertongueRepository;
 import com.assimilate.matrimony.dao.UserRepository;
-import com.assimilate.matrimony.domain.Desireform;
-import com.assimilate.matrimony.domain.Marital_status;
-import com.assimilate.matrimony.domain.Mothertongue;
+import com.assimilate.matrimony.domain.DesireformEntity;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
+import com.assimilate.matrimony.domain.MothertongueEntity;
 import com.assimilate.matrimony.domain.UserEntity;
 import com.assimilate.matrimony.service.DesireformService;
 
@@ -36,19 +36,19 @@ public class DesireformServiceImpl implements DesireformService{
 	
 	
 	@Override
-	public int createDesireforms(Desireform desireform) {
-		Desireform detailFromDb = desireformRepository.save(desireform);
+	public int createDesireforms(DesireformEntity desireform) {
+		DesireformEntity detailFromDb = desireformRepository.save(desireform);
 		return detailFromDb.getDesire_form_id();
 	}
 
 	@Override
-	public List<Desireform> getAllDesireform() {
-		List<Desireform>list=desireformRepository.findAll();
+	public List<DesireformEntity> getAllDesireform() {
+		List<DesireformEntity>list=desireformRepository.findAll();
 		return list;
 	}
 
 	@Override
-	public Desireform getUserById(int user_id) {
+	public DesireformEntity getUserById(int user_id) {
 		
 		return desireformRepository.getOne(user_id);
 	}
@@ -60,12 +60,12 @@ public class DesireformServiceImpl implements DesireformService{
 	}
 
 	@Override
-	public Desireform updateRecordsById(Integer user_id, int desire_form_id, Desireform desireform) {
+	public DesireformEntity updateRecordsById(Integer user_id, int desire_form_id, DesireformEntity desireform) {
 		UserEntity user = userRepository.getOne(user_id);
 		System.out.println("userdetails"+user_id);
 		if(user!=null)
 		{
-			Optional<Desireform>desireformObj = desireformRepository.findById(desire_form_id);
+			Optional<DesireformEntity>desireformObj = desireformRepository.findById(desire_form_id);
 			desireform.setUser(user);
 			if(desireformObj !=null) {
 				desireform.setDesire_form_id(desire_form_id);
@@ -80,8 +80,8 @@ public class DesireformServiceImpl implements DesireformService{
 	}
 
 	@Override
-	public List<Marital_status> getAllMarital_Status() {
-		List<Marital_status>list=marital_statusRepository.findAll();
+	public List<Marital_statusEntity> getAllMarital_Status() {
+		List<Marital_statusEntity>list=marital_statusRepository.findAll();
 		return list;
 	}
 
@@ -92,10 +92,16 @@ public class DesireformServiceImpl implements DesireformService{
 	}
 
 	@Override
-	public List<Mothertongue> getAllMothertongue() {
-	List<Mothertongue>list=mothertongueRepository.findAll();
+	public List<MothertongueEntity> getAllMothertongue() {
+	List<MothertongueEntity>list=mothertongueRepository.findAll();
 		return list;
 	}
 
+	/*
+	 * @Override public List<DesireformEntity> getAllMatching() {
+	 * 
+	 * List<DesireformEntity> res = desireformRepository.getAllMatching(); return
+	 * res; }
+	 */
 }
 

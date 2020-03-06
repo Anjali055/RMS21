@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 
 @Table(name = "blood_group")
-public class Blood_group {
+public class Blood_GroupEntity {
 
 	
 	@Id
@@ -22,12 +22,12 @@ public class Blood_group {
 	@Column()
 	private String blood_group_name;
 
-	public Blood_group() {
+	public Blood_GroupEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Blood_group(int blood_group_id, String blood_group_name) {
+	public Blood_GroupEntity(int blood_group_id, String blood_group_name) {
 		super();
 		this.blood_group_id = blood_group_id;
 		this.blood_group_name = blood_group_name;

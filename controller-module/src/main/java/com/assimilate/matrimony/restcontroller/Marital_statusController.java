@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Marital_status;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
 import com.assimilate.matrimony.service.Marital_statusService;
 
 @RestController
@@ -21,7 +21,7 @@ public class Marital_statusController {
 	
 	
 	@RequestMapping(path = "/createMaritalStatus")
-	public Marital_status createmaritalstatus(@RequestBody Marital_status marital_status) {
+	public Marital_statusEntity createmaritalstatus(@RequestBody Marital_statusEntity marital_status) {
 		marital_statusService.createmaritalstatuses(marital_status);
 		return marital_status;
 		
@@ -30,8 +30,8 @@ public class Marital_statusController {
 	
 	@RequestMapping("/getAllMarital_status")
 	
-	public List<Marital_status>getAllMaritalStatus(){
-		List<Marital_status>list=marital_statusService.getMaritalStatus();
+	public List<Marital_statusEntity>getAllMaritalStatus(){
+		List<Marital_statusEntity>list=marital_statusService.getMaritalStatus();
 		return list;
 	}
 }

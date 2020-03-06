@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "subcaste")
-public class Subcaste {
+public class SubcasteEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
@@ -24,12 +24,12 @@ private int subcaste_id;
 	
 	
 
-	public Subcaste() {
+	public SubcasteEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Subcaste(int subcaste_id, String subcaste_name, int caste_id) {
+	public SubcasteEntity(int subcaste_id, String subcaste_name, int caste_id) {
 		super();
 		this.subcaste_id = subcaste_id;
 		this.subcaste_name = subcaste_name;

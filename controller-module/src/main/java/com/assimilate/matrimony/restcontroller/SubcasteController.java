@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Subcaste;
+import com.assimilate.matrimony.domain.SubcasteEntity;
 import com.assimilate.matrimony.service.SubcasteService;
 
 @RestController
@@ -21,7 +21,7 @@ public class SubcasteController {
 	
 	
 	@RequestMapping(path = "/createSubcaste")
-	public Subcaste createsubcaste(@RequestBody Subcaste subcaste) {
+	public SubcasteEntity createsubcaste(@RequestBody SubcasteEntity subcaste) {
 		subcasteService.createsubcaste(subcaste);
 		
 		return subcaste;
@@ -31,8 +31,8 @@ public class SubcasteController {
 	
 	@RequestMapping("/getAllSubcaste")
 	
-	public List<Subcaste>getAllSubcaste(){
-		List<Subcaste>list=subcasteService.getAllSubcaste();
+	public List<SubcasteEntity>getAllSubcaste(){
+		List<SubcasteEntity>list=subcasteService.getAllSubcaste();
 		return list;
 	}
 }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assimilate.matrimony.dao.SubCasteRepository;
-import com.assimilate.matrimony.domain.Subcaste;
+import com.assimilate.matrimony.domain.SubcasteEntity;
 import com.assimilate.matrimony.service.SubcasteService;
 
 @Service
@@ -16,15 +16,15 @@ public class SubcasteServiceImpl implements SubcasteService{
 	private SubCasteRepository  subcasteRepository;
 
 	@Override
-	public void createsubcaste(Subcaste subcaste) {
+	public void createsubcaste(SubcasteEntity subcaste) {
 		
 		
 		subcasteRepository.save(subcaste);
 	}
 
 	@Override
-	public List<Subcaste> getAllSubcaste() {
-		List<Subcaste>list=subcasteRepository.findAll();
+	public List<SubcasteEntity> getAllSubcaste() {
+		List<SubcasteEntity>list=subcasteRepository.findAll();
 		return list;
 	}
 }

@@ -2,13 +2,13 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Occupation;
+import com.assimilate.matrimony.domain.OccupationEntity;
 
 public interface OccupationService {
 
-	void createOccupation(Occupation occupation);
+	void createOccupation(OccupationEntity occupation);
 
-	public List<Occupation> getAllOccupation();
+	public List<OccupationEntity> getAllOccupation();
 
 	
 

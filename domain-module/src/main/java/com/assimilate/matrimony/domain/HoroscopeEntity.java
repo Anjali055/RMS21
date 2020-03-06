@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "horoscope")
-public class Horoscope {
+public class HoroscopeEntity {
 
 	
 	@Id
@@ -20,12 +20,12 @@ public class Horoscope {
 	@Column()
 	private String horoscope_name;
 
-	public Horoscope() {
+	public HoroscopeEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Horoscope(int horoscope_id, String horoscope_name) {
+	public HoroscopeEntity(int horoscope_id, String horoscope_name) {
 		super();
 		this.horoscope_id = horoscope_id;
 		this.horoscope_name = horoscope_name;

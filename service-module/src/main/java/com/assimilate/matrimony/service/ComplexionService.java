@@ -2,12 +2,12 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Complexion;
+import com.assimilate.matrimony.domain.ComplexionEntity;
 
 public interface ComplexionService {
 
-	void createComplexion(Complexion complexion);
+	void createComplexion(ComplexionEntity complexion);
 
-	List<Complexion> getAllComplexion();
+	List<ComplexionEntity> getAllComplexion();
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Manglik;
+import com.assimilate.matrimony.domain.ManglikEntity;
 import com.assimilate.matrimony.service.ManglikService;
 
 @RestController
@@ -18,14 +18,14 @@ public class ManglikController {
 	ManglikService manglikService;
 	
 	@RequestMapping(path = "/createManglik")
-	public Manglik createManglik(@RequestBody Manglik manglik) {
+	public ManglikEntity createManglik(@RequestBody ManglikEntity manglik) {
 		manglikService.createManglik(manglik);
 		return manglik;
 	}
 	
 	@RequestMapping("/getAllManglik")
-	public List<Manglik>getAllManglik(){
-		List<Manglik>list=manglikService.getAllManglik();
+	public List<ManglikEntity>getAllManglik(){
+		List<ManglikEntity>list=manglikService.getAllManglik();
 		return list;
 	}
 }

@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreType;
 @JsonIgnoreType
 @Entity
 @Table(name = "desireform")
-public class Desireform {
+public class DesireformEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -82,19 +82,19 @@ public class Desireform {
 
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "manglik_id")
-	private Manglik manglik;
+	private ManglikEntity manglik;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "mothertongue_id")
-	private Mothertongue mothertongue;
+	private MothertongueEntity mothertongue;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "blood_group_id")
-	private Blood_group blood_group;
+	private Blood_GroupEntity blood_group;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "eating_habits_id")
-	private Eating_habits eating_habits;
+	private Eating_habitsEntity eating_habits;
 
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "body_type_id")
@@ -102,46 +102,46 @@ public class Desireform {
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "complexion_id")
-	private Complexion  complexion;
+	private ComplexionEntity  complexion;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "religion_id")
-	private Religion religion;
+	private ReligionEntity religion;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "caste_id")
-	private Caste caste;
+	private CasteEntity caste;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "subcaste_id")
-	private Subcaste subcaste;
+	private SubcasteEntity subcaste;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "horoscope_id")
-	private Horoscope horoscope;
+	private HoroscopeEntity horoscope;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "occupation_id")
-	private Occupation occupation;
+	private OccupationEntity occupation;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "marital_status_id")
-	private Marital_status marital_status;
+	private Marital_statusEntity marital_status;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "user_id")
 	
 	private UserEntity user;
-	public Desireform() {
+	public DesireformEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Desireform(int desire_form_id, String from_age, String to_age, String from_height, String to_height,
+	public DesireformEntity(int desire_form_id, String from_age, String to_age, String from_height, String to_height,
 			String from_weight, String to_weight, String spectacles, String nri, String annual_income, String smoking,
 			String drinking, Date created_At, String created_By, String physical_disability, String education,
-			Date updated_At, String updated_By, Manglik manglik, Mothertongue mothertongue, Blood_group blood_group,
-			Eating_habits eating_habits, Body_type body_type, Complexion complexion, Religion religion, Caste caste,
-			Subcaste subcaste, Horoscope horoscope, Occupation occupation, Marital_status marital_status,
+			Date updated_At, String updated_By, ManglikEntity manglik, MothertongueEntity mothertongue, Blood_GroupEntity blood_group,
+			Eating_habitsEntity eating_habits, Body_type body_type, ComplexionEntity complexion, ReligionEntity religion, CasteEntity caste,
+			SubcasteEntity subcaste, HoroscopeEntity horoscope, OccupationEntity occupation, Marital_statusEntity marital_status,
 			UserEntity user) {
 		super();
 		this.desire_form_id = desire_form_id;
@@ -284,28 +284,28 @@ public class Desireform {
 	public void setUpdated_By(String updated_By) {
 		this.updated_By = updated_By;
 	}
-	public Manglik getManglik() {
+	public ManglikEntity getManglik() {
 		return manglik;
 	}
-	public void setManglik(Manglik manglik) {
+	public void setManglik(ManglikEntity manglik) {
 		this.manglik = manglik;
 	}
-	public Mothertongue getMothertongue() {
+	public MothertongueEntity getMothertongue() {
 		return mothertongue;
 	}
-	public void setMothertongue(Mothertongue mothertongue) {
+	public void setMothertongue(MothertongueEntity mothertongue) {
 		this.mothertongue = mothertongue;
 	}
-	public Blood_group getBlood_group() {
+	public Blood_GroupEntity getBlood_group() {
 		return blood_group;
 	}
-	public void setBlood_group(Blood_group blood_group) {
+	public void setBlood_group(Blood_GroupEntity blood_group) {
 		this.blood_group = blood_group;
 	}
-	public Eating_habits getEating_habits() {
+	public Eating_habitsEntity getEating_habits() {
 		return eating_habits;
 	}
-	public void setEating_habits(Eating_habits eating_habits) {
+	public void setEating_habits(Eating_habitsEntity eating_habits) {
 		this.eating_habits = eating_habits;
 	}
 	public Body_type getBody_type() {
@@ -314,46 +314,46 @@ public class Desireform {
 	public void setBody_type(Body_type body_type) {
 		this.body_type = body_type;
 	}
-	public Complexion getComplexion() {
+	public ComplexionEntity getComplexion() {
 		return complexion;
 	}
-	public void setComplexion(Complexion complexion) {
+	public void setComplexion(ComplexionEntity complexion) {
 		this.complexion = complexion;
 	}
-	public Religion getReligion() {
+	public ReligionEntity getReligion() {
 		return religion;
 	}
-	public void setReligion(Religion religion) {
+	public void setReligion(ReligionEntity religion) {
 		this.religion = religion;
 	}
-	public Caste getCaste() {
+	public CasteEntity getCaste() {
 		return caste;
 	}
-	public void setCaste(Caste caste) {
+	public void setCaste(CasteEntity caste) {
 		this.caste = caste;
 	}
-	public Subcaste getSubcaste() {
+	public SubcasteEntity getSubcaste() {
 		return subcaste;
 	}
-	public void setSubcaste(Subcaste subcaste) {
+	public void setSubcaste(SubcasteEntity subcaste) {
 		this.subcaste = subcaste;
 	}
-	public Horoscope getHoroscope() {
+	public HoroscopeEntity getHoroscope() {
 		return horoscope;
 	}
-	public void setHoroscope(Horoscope horoscope) {
+	public void setHoroscope(HoroscopeEntity horoscope) {
 		this.horoscope = horoscope;
 	}
-	public Occupation getOccupation() {
+	public OccupationEntity getOccupation() {
 		return occupation;
 	}
-	public void setOccupation(Occupation occupation) {
+	public void setOccupation(OccupationEntity occupation) {
 		this.occupation = occupation;
 	}
-	public Marital_status getMarital_status() {
+	public Marital_statusEntity getMarital_status() {
 		return marital_status;
 	}
-	public void setMarital_status(Marital_status marital_status) {
+	public void setMarital_status(Marital_statusEntity marital_status) {
 		this.marital_status = marital_status;
 	}
 	public UserEntity getUser() {

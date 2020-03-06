@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assimilate.matrimony.dao.ComplexionRepository;
-import com.assimilate.matrimony.domain.Complexion;
+import com.assimilate.matrimony.domain.ComplexionEntity;
 import com.assimilate.matrimony.service.ComplexionService;
 
 @Service
@@ -16,14 +16,14 @@ public class ComplexionServiceImpl implements ComplexionService{
 	private ComplexionRepository complexionRepository;
 
 	@Override
-	public void createComplexion(Complexion complexion) {
+	public void createComplexion(ComplexionEntity complexion) {
 		
 		complexionRepository.save(complexion);
 	}
 
 	@Override
-	public List<Complexion> getAllComplexion() {
-		List<Complexion>list=complexionRepository.findAll();
+	public List<ComplexionEntity> getAllComplexion() {
+		List<ComplexionEntity>list=complexionRepository.findAll();
 		return list;
 	}
 }

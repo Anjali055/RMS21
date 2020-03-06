@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "occupation")
-public class Occupation {
+public class OccupationEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +19,12 @@ public class Occupation {
 	@Column()
 	private String name;
 
-	public Occupation() {
+	public OccupationEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Occupation(int occupation_id, String name) {
+	public OccupationEntity(int occupation_id, String name) {
 		super();
 		this.occupation_id = occupation_id;
 		this.name = name;

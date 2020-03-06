@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assimilate.matrimony.domain.Marital_status;
-import com.assimilate.matrimony.domain.Religion;
+import com.assimilate.matrimony.domain.Marital_statusEntity;
+import com.assimilate.matrimony.domain.ReligionEntity;
 import com.assimilate.matrimony.service.ReligionService;
 
 @RestController
@@ -20,7 +20,7 @@ public class ReligionController {
 	
 	@RequestMapping(path = "/createReligion")
 	
-	public Religion createReligion(@RequestBody Religion religion) {
+	public ReligionEntity createReligion(@RequestBody ReligionEntity religion) {
 		religionService.createReligion(religion);
 		
 		return religion;
@@ -28,8 +28,8 @@ public class ReligionController {
 	
 @RequestMapping("/getAllReligion")
 	
-	public List<Religion>getAllReligion(){
-	List<Religion>list=religionService.getAllReligion();
+	public List<ReligionEntity>getAllReligion(){
+	List<ReligionEntity>list=religionService.getAllReligion();
 		return list;
 	}
 

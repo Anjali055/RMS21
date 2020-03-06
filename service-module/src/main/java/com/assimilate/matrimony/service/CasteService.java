@@ -2,12 +2,12 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.Caste;
+import com.assimilate.matrimony.domain.CasteEntity;
 
 public interface CasteService {
 
-	void createcaste(Caste caste);
+	void createcaste(CasteEntity caste);
 
-	public List<Caste> getAllCaste();
+	public List<CasteEntity> getAllCaste();
 
 }
