@@ -28,6 +28,7 @@ public class StudentController {
 	
 	@PostMapping(path="/save")
 	public student saveMethod(@RequestBody student student){
+		System.out.println("controller"+student);
 		
 		return studentimpl.save(student) ;
 		
