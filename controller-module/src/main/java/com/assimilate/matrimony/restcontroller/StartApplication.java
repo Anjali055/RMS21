@@ -8,6 +8,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.assimilate.matrimony.service.StudentImpl;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import com.assimilate.matrimony.serviceImpl.EducationDetailsServiceImpl;
+
+//import com.assimilate.matrimony.dao.StudentDao;
+//import com.assimilate.matrimony.service.StudentImpl;
 
 @SpringBootApplication(scanBasePackages = "com.assimilate.matrimony")
 @EntityScan(basePackages = {"com.assimilate.matrimony.domain"})
@@ -35,6 +42,10 @@ import com.assimilate.matrimony.serviceImpl.ProfileDetailsServiceImpl;
 @EnableJpaAuditing
 @ComponentScan(basePackageClasses = ProfileDetailsServiceImpl.class)
 @ComponentScan(basePackageClasses = LanguageServiceImpl.class)
+@EnableJpaAuditing
+@ComponentScan({"com.assimilate.matrimony.service"})
+//@ComponentScan(basePackageClasses = StudentImpl.class)
+@ComponentScan(basePackageClasses = EducationDetailsServiceImpl.class)
 @EnableJpaRepositories("com.assimilate.matrimony.dao")
 public class StartApplication {
 	
@@ -44,6 +55,10 @@ public class StartApplication {
 		System.out.println("matrimony application started...........");
 
 	System.out.println("application start..........");
+		System.out.println("hello");
+		System.out.println("final");
+		
+	
 	}
 
 }

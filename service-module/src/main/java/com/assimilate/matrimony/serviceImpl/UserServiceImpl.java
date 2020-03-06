@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assimilate.matrimony.dao.UserRepository;
-<<<<<<< HEAD
+
 import com.assimilate.matrimony.domain.User;
 import com.assimilate.matrimony.service.UserService;
 
@@ -61,7 +61,6 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	
-=======
 import com.assimilate.matrimony.domain.UserEntity;
 import com.assimilate.matrimony.service.UserService;
 
@@ -86,4 +85,26 @@ public class UserServiceImpl implements UserService{
 	}
 
 }
->>>>>>> f981900817d7a49a6148140e8821500d94310551
+
+import com.assimilate.matrimony.domain.UserEntity;
+import com.assimilate.matrimony.service.UserService;
+
+@Service
+public class UserServiceImpl implements UserService  {
+
+	@Autowired
+	private UserRepository userRepository;
+	@Override
+	public List<UserEntity> getUser() {
+		
+		return userRepository.findAll();
+	}
+	@Override
+	public int createUser(UserEntity user) {
+		UserEntity userFromDb=userRepository.save(user);
+		return userFromDb.getUser_id();
+	}
+	
+
+}
+
