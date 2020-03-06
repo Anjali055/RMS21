@@ -17,6 +17,8 @@ import com.assimilate.matrimony.serviceImpl.ProfileDetailsServiceImpl;
 @EnableWebMvc
 @SpringBootApplication(scanBasePackages = "com.assimilate.matrimony")
 @EntityScan(basePackages = {"com.assimilate.matrimony.domain"})
+
+
 @ComponentScan({"com.assimilate.matrimony.service"})
 @EnableJpaAuditing
 @ComponentScan(basePackageClasses = ProfileDetailsServiceImpl.class)
@@ -26,6 +28,7 @@ public class StartApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(StartApplication.class, args);
+		System.out.println("matrimony application started...........");
 	}
 
 }

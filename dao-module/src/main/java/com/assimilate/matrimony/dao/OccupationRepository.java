@@ -3,9 +3,9 @@ package com.assimilate.matrimony.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.assimilate.matrimony.domain.Manglik;
+import com.assimilate.matrimony.domain.Occupation;
 
 @Repository
-public interface ManglikRepository extends JpaRepository<Manglik, Integer>{
+public interface OccupationRepository extends JpaRepository<Occupation, Integer>{
 
 }

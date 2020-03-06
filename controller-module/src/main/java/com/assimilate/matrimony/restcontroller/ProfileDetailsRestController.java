@@ -33,12 +33,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.assimilate.matrimony.common.MatrimonyConstants;
 import com.assimilate.matrimony.common.RecordNotFoundException;
-import com.assimilate.matrimony.domain.HoroscopeEntity;
-import com.assimilate.matrimony.domain.ManglikEntity;
-import com.assimilate.matrimony.domain.Marital_StatusEntity;
-import com.assimilate.matrimony.domain.MothertongueEntity;
+import com.assimilate.matrimony.domain.Horoscope;
+import com.assimilate.matrimony.domain.Manglik;
+import com.assimilate.matrimony.domain.Marital_status;
+import com.assimilate.matrimony.domain.Mothertongue;
 import com.assimilate.matrimony.domain.ProfileDetailsEntity;
-import com.assimilate.matrimony.domain.ReligionEntity;
+import com.assimilate.matrimony.domain.Religion;
 import com.assimilate.matrimony.domain.UserEntity;
 import com.assimilate.matrimony.service.ProfileDetailsService;
 
@@ -112,36 +112,36 @@ public class ProfileDetailsRestController {
 	
 	
 	@GetMapping(ALL_MOTHERTONGUES)
-	public ResponseEntity<List<MothertongueEntity>> getAllMothertongue() throws RecordNotFoundException {
+	public ResponseEntity<List<Mothertongue>> getAllMothertongue() throws RecordNotFoundException {
 		
-		List<MothertongueEntity> list=profileDetailsService.getAllMothertongue();
+		List<Mothertongue> list=profileDetailsService.getAllMothertongue();
 		
-		return new ResponseEntity<List<MothertongueEntity>>(list,new HttpHeaders(),HttpStatus.OK);
+		return new ResponseEntity<List<Mothertongue>>(list,new HttpHeaders(),HttpStatus.OK);
 		
 	}
 	
 	@GetMapping(ALL_RELIGIONS)
-	public List<ReligionEntity> getAllReligion() throws RecordNotFoundException{
-		List<ReligionEntity> list=profileDetailsService.getAllReligion();
+	public List<Religion> getAllReligion() throws RecordNotFoundException{
+		List<Religion> list=profileDetailsService.getAllReligion();
 		return list;
 		
 	}
 	
 	@GetMapping(ALL_MANGLIK)
-	public List<ManglikEntity> getAllManglik() throws RecordNotFoundException{
-		List<ManglikEntity> list=profileDetailsService.getAllManglik();
+	public List<Manglik> getAllManglik() throws RecordNotFoundException{
+		List<Manglik> list=profileDetailsService.getAllManglik();
 		return list;
 	}
 	
 	@GetMapping(ALL_HOROSCOPE)
-	public List<HoroscopeEntity> getAllHoroscope() throws RecordNotFoundException{
-		List<HoroscopeEntity> list=profileDetailsService.getAllHoroscope();
+	public List<Horoscope> getAllHoroscope() throws RecordNotFoundException{
+		List<Horoscope> list=profileDetailsService.getAllHoroscope();
 		return list;
 	}
 	
 	@GetMapping(All_MARITAL_STATUS)
-	public List<Marital_StatusEntity> getAllMarital_Status() throws RecordNotFoundException{
-		List<Marital_StatusEntity> list=profileDetailsService.getAllMarital_Status();
+	public List<Marital_status> getAllMarital_Status() throws RecordNotFoundException{
+		List<Marital_status> list=profileDetailsService.getAllMarital_Status();
 		return list;
 	}
 	

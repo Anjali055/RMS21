@@ -2,10 +2,13 @@ package com.assimilate.matrimony.service;
 
 import java.util.List;
 
-import com.assimilate.matrimony.domain.ReligionEntity;
+import com.assimilate.matrimony.domain.Religion;
+
 
 public interface ReligionService {
 
-	public List<ReligionEntity> getAllReligion();
+	public List<Religion> getAllReligion();
+
+	public void createReligion(Religion religion);
 
 }

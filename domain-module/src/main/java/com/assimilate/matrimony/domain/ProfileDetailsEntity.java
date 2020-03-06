@@ -63,34 +63,34 @@ public class ProfileDetailsEntity {
 	
 	@OneToOne()
 	@JoinColumn(name = "mothertongue_id")
-	 private MothertongueEntity mothertongue;
+	 private Mothertongue mothertongue;
 	
 	
 	@OneToOne()
 	@JoinColumn(name = "religion_id")
-	private ReligionEntity religion;
+	private Religion religion;
 	
 	@OneToOne()
 	@JoinColumn(name = "caste_id")
-	private CasteEntity caste;
+	private Caste caste;
 	
 	@OneToOne()
 	@JoinColumn(name = "subcaste_id")
-	private SubCasteEntity subCaste;
+	private Subcaste subCaste;
 	
 	@OneToOne()
 	@JoinColumn(name = "manglik_id")
-	private ManglikEntity manglik;
+	private Manglik manglik;
 	
 	
 	@OneToOne()
 	@JoinColumn(name = "horoscope_id")
-	private HoroscopeEntity horoscope;
+	private Horoscope horoscope;
 	
 	
 	@OneToOne()
 	@JoinColumn(name = "marital_status_id")
-	private Marital_StatusEntity marital_status;
+	private Marital_status marital_status;
 	
 	@OneToOne()
     @JoinColumn(name="user_id")
@@ -168,59 +168,59 @@ public class ProfileDetailsEntity {
 		Updated_By = updated_By;
 	}
 
-	public MothertongueEntity getMothertongue() {
+	public Mothertongue getMothertongue() {
 		return mothertongue;
 	}
 
-	public void setMothertongue(MothertongueEntity mothertongue) {
+	public void setMothertongue(Mothertongue mothertongue) {
 		this.mothertongue = mothertongue;
 	}
 
-	public ReligionEntity getReligion() {
+	public Religion getReligion() {
 		return religion;
 	}
 
-	public void setReligion(ReligionEntity religion) {
+	public void setReligion(Religion religion) {
 		this.religion = religion;
 	}
 
-	public CasteEntity getCaste() {
+	public Caste getCaste() {
 		return caste;
 	}
 
-	public void setCaste(CasteEntity caste) {
+	public void setCaste(Caste caste) {
 		this.caste = caste;
 	}
 
-	public SubCasteEntity getSubCaste() {
+	public Subcaste getSubCaste() {
 		return subCaste;
 	}
 
-	public void setSubCaste(SubCasteEntity subCaste) {
+	public void setSubCaste(Subcaste subCaste) {
 		this.subCaste = subCaste;
 	}
 
-	public ManglikEntity getManglik() {
+	public Manglik getManglik() {
 		return manglik;
 	}
 
-	public void setManglik(ManglikEntity manglik) {
+	public void setManglik(Manglik manglik) {
 		this.manglik = manglik;
 	}
 
-	public HoroscopeEntity getHoroscope() {
+	public Horoscope getHoroscope() {
 		return horoscope;
 	}
 
-	public void setHoroscope(HoroscopeEntity horoscope) {
+	public void setHoroscope(Horoscope horoscope) {
 		this.horoscope = horoscope;
 	}
 
-	public Marital_StatusEntity getMarital_status() {
+	public Marital_status getMarital_status() {
 		return marital_status;
 	}
 
-	public void setMarital_status(Marital_StatusEntity marital_status) {
+	public void setMarital_status(Marital_status marital_status) {
 		this.marital_status = marital_status;
 	}
 
@@ -234,8 +234,8 @@ public class ProfileDetailsEntity {
 
 	public ProfileDetailsEntity(Integer profile_details_id, String create_profile_by, String brides_name,
 			String birthdate, String height, Date created_At, String created_By, Date updated_At, String updated_By,
-			MothertongueEntity mothertongue, ReligionEntity religion, CasteEntity caste, SubCasteEntity subCaste,
-			ManglikEntity manglik, HoroscopeEntity horoscope, Marital_StatusEntity marital_status, UserEntity user) {
+			Mothertongue mothertongue, Religion religion, Caste caste, Subcaste subCaste,
+			Manglik manglik, Horoscope horoscope, Marital_status marital_status, UserEntity user) {
 		super();
 		this.profile_details_id = profile_details_id;
 		this.create_profile_by = create_profile_by;

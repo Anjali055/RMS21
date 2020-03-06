@@ -14,12 +14,12 @@ import com.assimilate.matrimony.dao.MothertongueRepository;
 import com.assimilate.matrimony.dao.ProfileDetailsRepository;
 import com.assimilate.matrimony.dao.ReligionRepository;
 import com.assimilate.matrimony.dao.UserRepository;
-import com.assimilate.matrimony.domain.HoroscopeEntity;
-import com.assimilate.matrimony.domain.ManglikEntity;
-import com.assimilate.matrimony.domain.Marital_StatusEntity;
-import com.assimilate.matrimony.domain.MothertongueEntity;
+import com.assimilate.matrimony.domain.Horoscope;
+import com.assimilate.matrimony.domain.Manglik;
+import com.assimilate.matrimony.domain.Marital_status;
+import com.assimilate.matrimony.domain.Mothertongue;
 import com.assimilate.matrimony.domain.ProfileDetailsEntity;
-import com.assimilate.matrimony.domain.ReligionEntity;
+import com.assimilate.matrimony.domain.Religion;
 import com.assimilate.matrimony.domain.UserEntity;
 import com.assimilate.matrimony.service.ProfileDetailsService;
 
@@ -76,27 +76,27 @@ public class ProfileDetailsServiceImpl implements ProfileDetailsService {
 	@Override
 	public ProfileDetailsEntity createProfileDetails(ProfileDetailsEntity profileDetails) {
 
-		MothertongueEntity mothertongueEntity = profileDetails.getMothertongue();
-		Optional<MothertongueEntity> mothertongueEntity2 = mothertongueRepository
+		Mothertongue mothertongueEntity = profileDetails.getMothertongue();
+		Optional<Mothertongue> mothertongueEntity2 = mothertongueRepository
 				.findById(mothertongueEntity.getMothertongue_id());
 
 		if (mothertongueEntity2 != null) {
 
-			ReligionEntity religionEntity = profileDetails.getReligion();
-			Optional<ReligionEntity> religionEntity2 = religionRepository.findById(religionEntity.getReligion_id());
+			Religion religionEntity = profileDetails.getReligion();
+			Optional<Religion> religionEntity2 = religionRepository.findById(religionEntity.getReligion_id());
 			if (religionEntity2 != null) {
-				ManglikEntity manglikEntity = profileDetails.getManglik();
-				Optional<ManglikEntity> manglikEntity2 = manglikRepository.findById(manglikEntity.getManglik_id());
+				Manglik manglikEntity = profileDetails.getManglik();
+				Optional<Manglik> manglikEntity2 = manglikRepository.findById(manglikEntity.getManglik_id());
 
 				if (manglikEntity2 != null) {
-					HoroscopeEntity horoscopeEntity = profileDetails.getHoroscope();
-					Optional<HoroscopeEntity> horoscopeEntity2 = horoscopeRepository
+					Horoscope horoscopeEntity = profileDetails.getHoroscope();
+					Optional<Horoscope> horoscopeEntity2 = horoscopeRepository
 							.findById(horoscopeEntity.getHoroscope_id());
 
 					if (horoscopeEntity2 != null) {
 
-						Marital_StatusEntity marital_StatusEntity = profileDetails.getMarital_status();
-						Optional<Marital_StatusEntity> marital_StatusEntity2 = marital_StatusRepository
+						Marital_status marital_StatusEntity = profileDetails.getMarital_status();
+						Optional<Marital_status> marital_StatusEntity2 = marital_StatusRepository
 								.findById(manglikEntity.getManglik_id());
 
 						if (marital_StatusEntity2 != null) {
@@ -177,32 +177,32 @@ public class ProfileDetailsServiceImpl implements ProfileDetailsService {
 	}
 
 	@Override
-	public List<MothertongueEntity> getAllMothertongue() {
-		List<MothertongueEntity> list=mothertongueRepository.findAll();
+	public List<Mothertongue> getAllMothertongue() {
+		List<Mothertongue> list=mothertongueRepository.findAll();
 		return list;
 	}
 
 	@Override
-	public List<ReligionEntity> getAllReligion() {
-		List<ReligionEntity> list=religionRepository.findAll();
+	public List<Religion> getAllReligion() {
+		List<Religion> list=religionRepository.findAll();
 		return list;
 	}
 
 	@Override
-	public List<ManglikEntity> getAllManglik() {
-		List<ManglikEntity> list=manglikRepository.findAll();
+	public List<Manglik> getAllManglik() {
+		List<Manglik> list=manglikRepository.findAll();
 		return list;
 	}
 
 	@Override
-	public List<HoroscopeEntity> getAllHoroscope() {
-		List<HoroscopeEntity> list=horoscopeRepository.findAll();
+	public List<Horoscope> getAllHoroscope() {
+		List<Horoscope> list=horoscopeRepository.findAll();
 		return list;
 	}
 
 	@Override
-	public List<Marital_StatusEntity> getAllMarital_Status() {
-		List<Marital_StatusEntity> list=marital_StatusRepository.findAll();
+	public List<Marital_status> getAllMarital_Status() {
+		List<Marital_status> list=marital_StatusRepository.findAll();
 		return list;
 	}
 

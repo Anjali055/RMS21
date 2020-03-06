@@ -34,7 +34,7 @@ public class UserEntity {
 	@Column
 	private String password;
 	@Column
-	private Integer mobile;
+	private String mobile;
 	@Column
 	private String gender;
 	@Column
@@ -59,6 +59,30 @@ public class UserEntity {
 	
 	@Column
 	private String Updated_By;
+
+	public UserEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserEntity(Integer user_id, String username, String email, String password, String mobile, String gender,
+			Integer isDelete, Integer isAuthorized, Integer isEnabled, Date created_At, String created_By,
+			Date updated_At, String updated_By) {
+		super();
+		this.user_id = user_id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.mobile = mobile;
+		this.gender = gender;
+		this.isDelete = isDelete;
+		this.isAuthorized = isAuthorized;
+		this.isEnabled = isEnabled;
+		this.created_At = created_At;
+		this.created_By = created_By;
+		Updated_At = updated_At;
+		Updated_By = updated_By;
+	}
 
 	public Integer getUser_id() {
 		return user_id;
@@ -92,11 +116,11 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	public Integer getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Integer mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
@@ -164,29 +188,6 @@ public class UserEntity {
 		Updated_By = updated_By;
 	}
 
-	public UserEntity(Integer user_id, String username, String email, String password, Integer mobile, String gender,
-			Integer isDelete, Integer isAuthorized, Integer isEnabled, Date created_At, String created_By,
-			Date updated_At, String updated_By) {
-		super();
-		this.user_id = user_id;
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.mobile = mobile;
-		this.gender = gender;
-		this.isDelete = isDelete;
-		this.isAuthorized = isAuthorized;
-		this.isEnabled = isEnabled;
-		this.created_At = created_At;
-		this.created_By = created_By;
-		Updated_At = updated_At;
-		Updated_By = updated_By;
-	}
-
-	public UserEntity() {
-		super();
-	}
-
 	@Override
 	public String toString() {
 		return "UserEntity [user_id=" + user_id + ", username=" + username + ", email=" + email + ", password="
@@ -194,5 +195,9 @@ public class UserEntity {
 				+ isAuthorized + ", isEnabled=" + isEnabled + ", created_At=" + created_At + ", created_By="
 				+ created_By + ", Updated_At=" + Updated_At + ", Updated_By=" + Updated_By + "]";
 	}
+
+	
+	
+	
 
 }

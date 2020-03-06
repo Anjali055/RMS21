@@ -22,6 +22,7 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
 	@GetMapping(GET_ALL_USER)
 	public List<UserEntity> getUser(){
 	  return  userService.getUser();
@@ -35,5 +36,7 @@ public class UserController {
 		userService.createUser(user);
 		return user;
 	}
+	
+	
 
 }

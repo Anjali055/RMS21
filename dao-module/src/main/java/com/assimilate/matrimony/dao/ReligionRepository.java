@@ -3,9 +3,9 @@ package com.assimilate.matrimony.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.assimilate.matrimony.domain.ReligionEntity;
+import com.assimilate.matrimony.domain.Religion;
 
 @Repository
-public interface ReligionRepository extends JpaRepository<ReligionEntity, Integer> {
+public interface ReligionRepository extends JpaRepository<Religion, Integer> {
 
 }
