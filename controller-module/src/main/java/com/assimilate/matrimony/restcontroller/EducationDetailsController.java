@@ -53,7 +53,7 @@ public class EducationDetailsController {
 	//public EducationDetailsEntity updateEducationDetails(@RequestBody EducationDetailsEntity educationDetails)
 	//{
 	//	educationDetailsService.updateEducationDetails(educationDetails);
-	//  educationDetails;
+	//  educationDetails; ///
 	//}
 	
 	//--------------------------------Delete Table using user Id Soft Delete-------------------------------------------------------
